@@ -1,0 +1,76 @@
+\question{
+    已知一个电荷系统的偶极矩定义为
+    \equa{\bm p(t) = \sv \rho(\x',t)\x' \dv. \label{1.1_定义}}
+    利用电荷守恒定律
+    \equa{\bm{\nabla \cdot J} + \frac{\partial \rho}{\partial t} = 0, \label{1.1_电荷守恒}}
+    证明$\bm p$的变化率为
+    \equa{\frac{\mathrm d \bm p}{\mathrm d t} = \sv \j'(\x',t)\dv. \label{1.1_待证}}
+}
+
+在定义(\ref{1.1_定义})中，空间位矢$\x'$这一自由度被积掉了。可见，偶极矩$\bm p$的自变量为时间和积分区域，我们记为
+\begin{equation}
+    \bm p = \bm p (V,t). \label{1.1_宗量}
+\end{equation}
+注意式中的$V$表示积分区域而非体积。
+
+对(\ref{1.1_宗量})求时间的导数，得
+\begin{eqnarray}
+    \frac{\mathrm d \bm p}{\mathrm d t} 
+    & = & \label{1.1_5}
+        \frac{\partial \bm p}{\partial V} \frac{\mathrm d V}{\mathrm d t} + \frac{\partial \bm p}{\partial t}\\
+    & = & \label{1.1_6}
+        \spv(\j'\bmcd\ds)\x' + \sv\frac{\partial\rho'}{\partial t}\x'\dv\\
+    & = & \label{1.1_7}
+        \spv(\j'\bmcd\ds)\x' - \sv(\nbl\bmcd\j')\x'\dv\\
+    & = & \label{1.1_8}
+        \spv(\j'\bmcd\ds)\x' - \sv\nbl\bmcd(\j'\x')\dv + \sv(\j'\bmcd\nbl)\x'\dv\\
+    & = & \label{1.1_9}
+        \spv(\j'\bmcd\ds)\x' - \spv(\j'\x')\bmcd\ds + \sv\j'\dv\\
+    & = & \label{1.1_10}
+        \spv\left[ (\j'\bmcd\ds)\x' - (\x'\bmcd\ds)\j' \right] + \sv\j'\dv,
+\end{eqnarray}
+其中我们简记
+\begin{equation}
+    \rho' = \rho(\x',t),
+\end{equation}
+\begin{equation}
+    \j' = \bm J(\x',t).
+\end{equation}
+
+从(\ref{1.1_5})右边第一项到(\ref{1.1_6})第一项使用了如下关系
+\begin{eqnarray}
+    \frac{\partial \bm p}{\partial V} \frac{\mathrm d V}{\mathrm d t} 
+    & = & 
+        \lim_{\Delta t \to 0}  \frac{\left(\int_{V+\Delta V}-\sv\right)\rho'\x'\dv}{\Delta t} \\
+    & = & 
+        \lim_{\Delta t \to 0}  \frac{\spv\rho'\x'\bm \Delta l_{\bm n'}\bmcd\ds}{\Delta t}\\
+    & = & 
+        {\spv(\rho'\bm v\bmcd\ds)\x'}\\
+    & = & 
+        \spv(\j'\bmcd\ds)\x',
+\end{eqnarray}
+这表示偶极矩受积分区域$V$的变化的影响，这一项的物理意义是在新的积分区域$\Delta V$处的电荷提供的偶极矩增量。从(\ref{1.1_5})到(\ref{1.1_6})则是使用了电荷守恒(\ref{1.1_电荷守恒})式
+\begin{equation}
+    \nbl\bmcd\j' + \frac{\partial \rho'}{\partial t} = 0.
+\end{equation}
+从(\ref{1.1_7})到(\ref{1.1_8})的分部积分利用了张量运算关系
+\begin{equation}
+    \nbl\bmcd(\j'\x') = (\j'\bmcd\nbl)\x' + (\nbl\bmcd\j')\x'.
+\end{equation}
+从(\ref{1.1_8})第二项到(\ref{1.1_9})第二项使用了高斯定理，从(\ref{1.1_8})第三项到(\ref{1.1_9})第三项则是做了以下矢量运算\footnote{本文的分量运算均采用爱因斯坦求和约定。}
+\begin{equation}
+    (\j'\bmcd\nbl)\x' = J'_i\partial'_i x'_j \bm e_j = J'_i\delta_{ij}\bm e_j = J'_i e_i = \j'.
+\end{equation}
+
+我们从(\ref{1.1_10})的结果继续计算。对于任一\textbf{孤立的、有限大的}电荷系统，我们总可以取足够大的区域$V$，使得电荷全部处于$V$内部，且没有电流通过边界$\partial V$，这意味着
+\begin{equation}
+    \j'|_{\x'\in\partial V} = 0,
+\end{equation}
+那么自然(\ref{1.1_10})的第一项
+\begin{equation}
+    \spv\left[ (\j'\bmcd\ds)\x' - (\x'\bmcd\ds)\j' \right] = 0,
+\end{equation}
+由此证得
+\begin{equation}
+    \frac{\mathrm d \bm p}{\mathrm d t}  = \sv\j'\dv.
+\end{equation}

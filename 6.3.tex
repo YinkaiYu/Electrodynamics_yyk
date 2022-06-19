@@ -1,0 +1,49 @@
+\question{根据四维波矢是一个洛伦兹四维矢量，推导多普勒效应和光行差效应。}
+
+    对于光而言
+    \equa{\k=\frac{\o}{c}\danwei{k}}
+    取boost方向为x正方向，取光线在xy平面，选取如
+    \footnote{
+        记洛伦兹协变时空坐标
+        \equa{x^\mu=
+        \begin{pmatrix}
+        \i ct & \x
+        \end{pmatrix}\trans
+        }
+        相应的度规为
+        \equa{g_{\mu\nu}=\diag{1&1&1&1}}
+        x-boost洛伦兹变换张量
+        \equa{
+            \zhang{\Lambda}{\mu}{\nu}=
+            \mat{
+                \gamma & -\i\beta\gamma &   &   \\
+                \i\beta\gamma & \gamma &   &   \\
+                  &   & 1 &   \\
+                  &   &   & 1 \\
+            }
+        }
+        特别地，此时有
+        \equa{\Lambda\trans=\Lambda\inv\label{6.3_正交}}
+    }
+    所述的洛伦兹协变表象，写出洛伦兹协变的波矢坐标
+    \equa{k^\mu=\mat{\i\dfrac{\o}{c}&\k\\}\trans=\mat{\i\dfrac{\o}{c}&\dfrac{\o}{c}\cos\theta&\dfrac{\o}{c}\sin\theta&0\\}\trans}
+    变换到光源的本征参考系\ckx{'}
+    \equa{
+        \mat{\i\frac{\o'}{c}\\\frac{\o'}{c}\cos\theta'\\\frac{\o'}{c}\sin\theta'\\0\\}
+        =\lormat
+        \mat{\i\frac{\o}{c}\\\frac{\o}{c}\cos\theta\\\frac{\o}{c}\sin\theta\\0\\}
+        \label{6.3_1}
+    }
+    其中
+    \equa{\be=\frac{v}{c}\qquad\ga=\frac{1}{\sqrt{1-\be^2}}}
+    \neq{6.3_1}的第一行即多普勒效应公式
+    \equa{\o'=\ga\o-\bega\o\cos\theta=\o\ga\kuohao{1-\frac{v}{c}\cos\theta}\label{6.3_2}}
+    \neq{6.3_1}的第三行两边分别除以第二行两边得光行差效应公式
+    \equa{\tan\theta'=\frac{\frac{\o}{c}\sin\theta}{-\bega\frac{\o}{c}+\ga\frac{\o}{c}\cos\theta}=\frac{\sin\theta}{\ga\kuohao{\cos\theta-v/c}}}
+
+\question{在惯性系\ckx{}中测得平面波光信号的角频率\nota{\o}，沿XY平面入射，波矢与X轴正向成\nota{\pi/3}。 已知光源沿X轴正方向以速度\nota{v_0}相对\ckx{}退行，求光信号的固有频率。}
+
+    变换到光源的本征参考系，结合本题条件和上题所得多普勒效应公式\neq{6.3_2}，在\neq{6.3_2}中作如下替换
+    \equa{\o_0=\o'\qquad v=v_0\qquad \cos\theta=\cos\frac{\pi}{3}=\frac{1}{2}}
+    得
+    \equa{\o_0=\frac{1-\frac{v_0}{2c}}{\sqrt{1-v_0^2/c^2}}}

@@ -1,0 +1,122 @@
+\section{证明$\varepsilon_{ijk}$是三维空间的三阶“物理”张量。}
+
+    \subsection{数学准备：定义、结论与说明}
+
+    课件上对“物理”张量的定义是：在空间的转动或反演下不变。
+    
+    那么我们先说结论：\nota{\ep}\textbf{不是}三维空间的三阶“物理”张量，它属于赝张量。也就是说，\nota{\ep}在空间的转动操作下不变，而在空间反演操作下变号。下面我们将说明这一点。
+    
+    在此之前，在三维空间中定义三阶赝张量为：如果三维空间中的一个量$\mathbf{\varepsilon}$对于基变换
+    \begin{equation}
+        \mathbf{\hat{e'}}_{i'} = A_{i'i} \bm{e}_i ,
+        \label{0.1_基}
+    \end{equation}
+    满足分量赝协变关系\footnote{使用爱因斯坦求和约定。}
+    \begin{equation}
+        \varepsilon'_{i'j'k'} = 
+        \begin{cases}
+            A_{i'i}A_{j'j}A_{k'k} \varepsilon_{ijk} & \text{空间旋转},\\
+            - A_{i'i}A_{j'j}A_{k'k} \varepsilon_{ijk} & \text{空间反演},
+        \end{cases}
+        \label{0.1_赝}
+    \end{equation}
+    则$\mathbf{\varepsilon}$叫做三阶赝张量。
+    
+    \subsection{方法一：利用\nota{\ep}的定义}
+    
+        这种方法只能只能证明\nota{\ep}不是张量，但是却不能严格证明它是赝张量。
+        
+        我们按照\nota{\ep}的一种定义：
+        
+            \begin{equation}
+                \varepsilon_{ijk} = \varepsilon_{jki} = \varepsilon_{kij} = -\varepsilon_{jik} = -\varepsilon_{ikj} = -\varepsilon_{kji}, \label{0.1_对称}
+            \end{equation}
+            \begin{equation}
+                \varepsilon_{123} = 1 \label{0.1_1}.
+            \end{equation}
+        
+        我们用反证法。如果\nota{\ep}是张量，则由指标反对称关系的协变性，(\ref{0.1_对称})在基变换下是必然成立的，即
+        \begin{equation}
+                \varepsilon'_{i'j'k'} = \varepsilon'_{j'k'i'} = \varepsilon'_{k'i'j'} = -\varepsilon'_{j'i'k'} = -\varepsilon'_{i'k'j'} = -\varepsilon'_{k'j'i'} .
+                \label{0.1_对称'}
+        \end{equation}
+        下面我们需要讨论(\ref{0.1_1})是否会随着基变换而变化。
+        
+        我们来计算张量$\varepsilon'_{i'j'k'}$的二阶范数，由正交变换的性质可知
+        \begin{equation}
+            \left \| \varepsilon'_{i'j'k'}  \right \| _2 = 
+            \left \| \varepsilon_{ijk}  \right \| _2,
+        \end{equation}
+        再结合(\ref{0.1_对称})(\ref{0.1_对称'})立即得到
+        \begin{equation}
+            (\varepsilon'_{i'j'k'})^2 = 1.
+        \end{equation}
+        则$\varepsilon'_{i'j'k'}$既可能是$+1$，也可能是$-1$，不能推出(\ref{0.1_1})在基变换下仍然成立。
+        
+        故，由(\ref{0.1_对称})(\ref{0.1_1})定义的\nota{\ep}不是三维空间中的张量。
+    
+    \subsection{方法二：利用\nota{\ep}的性质}
+    
+    \nota{\ep}的性质可以用来定义叉乘，这表述为
+    \begin{equation}
+        \varepsilon_{ijk} = (\mathbf{
+        \hat{e}_i} \times \bm{e}_j)\cdot \bm{e}_k,
+        \label{0.1_性质}
+    \end{equation}
+    直接将基变换关系(\ref{0.1_基})代入(\ref{0.1_性质})可以得到以下两式
+    \begin{eqnarray}
+        \varepsilon_{i'j'k'} 
+        & = & (\bm{e}_{i'} \times \bm{e}_{j'})\cdot \bm{e}_{k'}\\
+        & = & \left[(A_{i'i}\bm{e}_i)\times(A_{j'j}\bm{e}_j) \right]\cdot (A_{k'k}\bm{e}_k)\\
+        & = & A_{i'i}A_{j'j}A_{k'k}(\bm{e}_i \times \bm{e}_j)\cdot \bm{e}_k,\label{0.1_e1}
+    \end{eqnarray}
+    \begin{equation}
+        (\bm{e}_{i'} \times \bm{e}_{j'})\cdot \bm{e}_{k'} = 
+        \begin{cases}
+            (\bm{e}_i \times \bm{e}_j)\cdot \bm{e}_k & \text{空间旋转},\\
+            - (\bm{e}_i \times \bm{e}_j)\cdot \bm{e}_k & \text{空间反演}.\label{0.1_e2}
+        \end{cases}
+    \end{equation}
+    由(\ref{0.1_e1})(\ref{0.1_e2})就可以回到定义(\ref{0.1_赝})。故此证明了\nota{\ep}是三维空间中的三阶赝张量。
+    
+\section{写出并矢$\bm{e}_3\bm{e}_1$和$\bm{e}_1\bm{e}_3$在笛卡尔坐标系的分量矩阵。}
+
+    $\bm{e}_3\bm{e}_1$的分量为
+    \begin{equation}
+        \kuohao{\bm{e}_3 \bm{e}_1}_{ij} = ((\bm{e}_3\bm{e}_1)\cdot \bm{e}_i)\cdot \bm{e}_j.
+    \end{equation}
+    由此得$\bm{e}_3\bm{e}_1$在笛卡尔坐标系中的分量矩阵为
+    \begin{equation}
+        \bm{e}_3\bm{e}_1 = \bm{e}_3\otimes\bm{e}_1 \longrightarrow  
+        \begin{bmatrix}
+            0 \\
+            0 \\
+            1
+        \end{bmatrix}
+        \begin{bmatrix}
+            1  & 0 & 0
+        \end{bmatrix} = 
+        \begin{bmatrix}
+            0  & 0 & 0\\
+            0  & 0 & 0\\
+            1  & 0 & 0
+        \end{bmatrix}.
+    \end{equation}
+    同理
+    \begin{equation}
+        \bm{e}_1\bm{e}_3 = \bm{e}_1\otimes\bm{e}_3 \longrightarrow  
+        \begin{bmatrix}
+            1 \\
+            0 \\
+            0
+        \end{bmatrix}
+        \begin{bmatrix}
+            0  & 0 & 1
+        \end{bmatrix} = 
+        \begin{bmatrix}
+            0  & 0 & 1\\
+            0  & 0 & 0\\
+            0  & 0 & 0
+        \end{bmatrix}.
+    \end{equation}
+    两式中均使用了“$\longrightarrow $”表明张量和它的坐标只是对应而非相等关系。

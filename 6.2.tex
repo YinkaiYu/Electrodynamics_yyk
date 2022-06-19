@@ -1,0 +1,83 @@
+\question{静止长度为\nota{l_0}的车厢，以速度\nota{v}相对于地面运动，车厢的后壁以速度\nota{u_0}向前推出一个小球，求地面观察者看到小球从后壁到前壁的运动时间。}
+
+    取车厢为\ckx{'}系，地面为\ckx{}系，x轴取为车厢运动的方向。\ckx{'}与\ckx{}的时空原点均对齐为小球推出时的车厢后壁处。
+    
+    在\ckx{'}系中，小球到达车厢前壁的时空坐标为
+    \footnote{
+        记洛伦兹矢量
+        \equa{x^\mu=
+        \begin{pmatrix}
+        \i ct & \x
+        \end{pmatrix}\trans
+        }
+        相应的度规为
+        \equa{g_{\mu\nu}=\diag{1&1&1&1}}
+        洛伦兹变换张量
+        \equa{
+            \zhang{\Lambda}{\mu}{\nu}=
+            \mat{
+                \gamma & -\i\beta\gamma & 0 & 0 \\
+                \i\beta\gamma & \gamma & 0 & 0 \\
+                0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 1 \\
+            }
+        }
+        特别地，此时有
+        \equa{\Lambda\trans=\Lambda^{-1}\label{6.2_正交}}
+    }
+    \equa{x'^\mu=\mat{\i cl_0/u_0&l_0&0&0\\}\trans\label{6.2_1世界点}}
+    有洛伦兹变换\footnote{采用爱因斯坦求和约定。}（\nota{x^1}-boost）
+    \equa{x'^\mu=\zhang{\Lambda}{\mu}{\nu}x^\nu\label{6.2_1洛伦兹变换}}
+    其中
+    \equa{\beta=\frac{v}{c}\qquad\gamma=\frac{1}{\sqrt{1-\beta^2}}}
+    由(\ref{6.2_1世界点})(\ref{6.2_1洛伦兹变换})得
+    \equa{x^0=\i\gamma l_0\kuohao{\frac{c}{u_0}+\beta}}
+    即地面观察者看到小球从后壁到前壁的运动时间为
+    \equa{t=\frac{x^0-0}{\i c}=\frac{{c}/{u_0}+{v}/{c}}{\sqrt{1-{v^2}/{c^2}}}\frac{l_0}{c}}
+
+\question{求参照系\nota{\Sigma'}相对\nota{\Sigma}沿\nota{x}轴方向以速度\nota{v_0}匀速运动。在\nota{\Sigma'}观测到一粒子以速度\nota{\kuohao{v'^1,v'^2,v'^3}}运动，求在\nota{\Sigma}中观测到的粒子速度。}
+
+    洛伦兹协变速度定义为
+    \equa{v^\mu=\mat{\i c&\bm{v}\\}\trans\gamma\kuohao{v}}
+    \equa{\gamma\kuohao{v}=\frac{1}{\sqrt{1-{v_iv^i}/{c^2}}}}
+    从\ckx{'}到\ckx{}的洛伦兹逆变换
+    \equa{v^\mu=\zhang{\kuohao{\Lambda^{-1}}}{\mu}{\nu}v'^\nu\label{6.2_2洛伦兹变换}}
+    \equa{\beta=\frac{v_0}{c}\qquad\gamma=\frac{1}{\sqrt{1-\beta^2}}}
+    由(\ref{6.2_2洛伦兹变换})的第一条方程得
+    \equa{\frac{\gamma\kuohao{v'}}{\gamma\kuohao{v}}=\kuohao{1+\beta\frac{v'^1}{c}}\gamma\label{6.2_2关系}}
+    将(\ref{6.2_2关系})代入(\ref{6.2_2洛伦兹变换})的余下几条方程得
+    \equa{v^1=\kuohao{\beta\gamma c+\gamma v'^1}\frac{\gamma\kuohao{v}}{\gamma\kuohao{v'}}=\frac{v_0+v'^1}{1+v_0v'^1/c^2}}
+    \equa{v^2=v'^2\frac{\gamma\kuohao{v}}{\gamma\kuohao{v'}}=\frac{v'^2\sqrt{1-v_0^2/c^2}}{1+v_0v'^1/c^2}}
+    \equa{v^3=v'^3\frac{\gamma\kuohao{v}}{\gamma\kuohao{v'}}=\frac{v'^3\sqrt{1-v_0^2/c^2}}{1+v_0v'^1/c^2}}
+    
+    
+
+\question{有以光源S与接收器R相对静止，距离为\nota{l_0}，S-R装置浸在均匀无限的液体介质（静止折射率\nota{n}）中。试对下列三种情况计算光源发出讯号到接收器接到讯号所经历的时间。}
+
+    \subquestion{液体介质相对于S-R装置静止；}
+    
+        在液体介质的静止参考系中，光速各向同性，为
+        \equa{u_0=\frac{c}{n}}
+        液体介质相对于S-R装置静止，则光从S到R的直线速度即为
+        \equa{u^{(1)}=u_0}
+        S-R所在参考系所经历的时间
+        \equa{\Delta t^{(1)}=\frac{l_0}{u^{(1)}}=\frac{nl_0}{c}}
+    
+    \subquestion{液体沿着S-R连线方向以速度\nota{v}流动；}
+    
+        从液体介质的静止参考系变换到S-R所在参考系，得光从S到R的直线速度为
+        \equa{u^{(2)}=\frac{u_0+v}{1+u_0v/c^2}}
+        S-R所在参考系所经历的时间
+        \equa{\Delta t^{(2)}=\frac{l_0}{u^{(2)}}=\frac{\kuohao{1+v/nc}l_0}{c/n+v}}
+    
+    \subquestion{液体垂直于S-R连线方向以速度\nota{v}流动。}
+    
+        从液体介质的静止参考系变换到S-R所在参考系，会有光行差效应，因此需要考虑垂直于S-R连线方向（记为x轴）与平行于S-R连线方向（记为y轴）的分量
+        \equa{u_x^{(3)}=\frac{u_x'+v}{1+u_x'v/c^2}}
+        \equa{u_y^{(3)}=\frac{u_y'\sqrt{1-v^2/c^2}}{1+u_x'v/c^2}}
+        在S-R所在参考系中，最小到达的光束是平行于S-R连线方向的，于是
+        \equa{u_x^{(3)}=0}
+        \equa{u_x'^2+u_y'^2=\frac{c^2}{n^2}}
+        解得S-R所在参考系所经历的时间
+        \equa{\Delta t^{(3)}=\frac{l_0\sqrt{1-v^2/c^2}}{\sqrt{c^2/n^2-v^2}}}
+

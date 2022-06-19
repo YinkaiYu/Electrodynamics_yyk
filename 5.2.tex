@@ -1,0 +1,56 @@
+\question{计算圆形小孔的衍射。}
+
+    考虑平面波入射，小孔半径为\nota{a}，计算远场的夫琅禾费衍射\footnote{郭硕鸿《电动力学（第三版）》179页这个公式写错了，它的分子漏了一个\nota{k}，量纲都不对呢。好多同学直接照抄课本，于是也写错了，这不好。}
+    \equa{
+        \begin{aligned}
+            \psi\kuohao{\x}
+            &= -\frac{\i k\psi_0\exp{\i kR}}{4\pi R}\kuohao{1+\cos\theta_2}\int_{S_0}\exp{-\i\k_2\cdot\x'}\d S' \\
+            &= -\frac{\i k\psi_0\exp{\i kR}}{4\pi R}\kuohao{1+\cos\theta_2}\int_0^{2\pi}\int_0^a\exp{-\i k\sin\theta_2 R'\cos\phi}R'\d R' \d \phi \\
+            &= -\frac{\i ka^2\psi_0\exp{\i kR}}{2 R} \kuohao{\frac{1+\cos\theta_2}{2}}
+            \fkuohao{\frac{2J_1\kuohao{k_2a\sin\theta_2}}{k_2a\sin\theta_2}} \\
+        \end{aligned}
+    }
+    其中\nota{J_1(x)}表示一阶Bessel函数。
+    
+    于是光强分布为
+    \equa{I=\psi^*\psi=I_0\kuohao{\frac{1+\cos\theta_2}{2}}^2\fkuohao{\frac{2J_1\kuohao{k_2a\sin\theta_2}}{k_2a\sin\theta_2}}^2\label{5.2_I}}
+    其中
+    \equa{I_0=\kuohao{\frac{ka^2\psi_0}{2R}}^2}
+    此即衍射图样中心的光强。
+    
+    在远场近轴条件下，往往只计算到\nota{\theta_2}的最低次项，于是\neq{5.2_I}近似为
+    \equa{I\approx I_0\fkuohao{\frac{2J_1\kuohao{k_2a\theta_2}}{k_2a\theta_2}}^2}
+    
+    
+\newpage
+\question{设有一电矩振幅为\nota{\p}，频率为\nota{\o}的电偶极子距理想导体平面为\nota{a/2}处，\nota{\p}平行于导体平面。设\nota{a\ll\lambda}，求在\nota{R\gg\lambda}处电磁场及辐射能流。}
+
+    对于电偶极子
+    \equa{\p\kuohao{t}=\p_0\exp{\i\o t}}
+    其产生的矢势场为（下面的场都是时谐场，简便起见，只写空间部分）
+    \equa{\a\kuohao{\x}\exp{\i\o t}=\frac{\muz}{4\pi}\frac{\exp{\i kR}}{R}\dot{\p}=\frac{\muz}{4\pi}\frac{\exp{\i kR}}{R}\i\o\p_0\exp{\i\o t}}
+    
+    对于有镜像存在的情形，我们在远场条件近似到\nota{1/R}的最低次项，则总的矢势为
+    \equa{\a_{\mathrm{tot}}=\bm{a}\cdot\tidu'\a=-\bm{a}\cdot\danwei{R}\i k\a=a\cos\theta\o k\frac{\muz}{4\pi}\frac{\exp{\i kR}}{R}\p_0}
+    其中\nota{\bm{a}=a\danwei{n}}垂直于导体平面，从镜像偶极子指向真实偶极子。
+    
+    则可由此计算电磁场
+    \equa{\b=\xuandu\a_{\mathrm{tot}}=\i ak^3c\cos\theta\frac{\muz}{4\pi}\frac{\exp{\i kR}}{R}\danwei{R}\times\p_0}
+    \equa{\e=\frac{\i c}{k}\xuandu\b=\i ak^3c^2\cos\theta\frac{\muz}{4\pi}\frac{\exp{\i kR}}{R}\kuohao{\p_0-p_0\sin\theta\danwei{R}}}
+    能流密度对时间的平均值为
+    \equa{\langle\s\rangle=\frac{1}{2}\mathrm{Re}\kuohao{\e^*\times\h}=\frac{c}{2\mu}\det{\b}^2\danwei{R}=\frac{\muz\o^6a^2\cos^2\theta}{32\pi^2c^3R^2}\det{\danwei{R}\times\p_0}^2\danwei{R}}
+    可以在球极坐标中表示，取北极轴沿\nota{\bm{a}}，赤道面上的极轴沿\nota{\p_0}，则
+    \equa{\langle\s\rangle=\frac{\muz\o^6a^2p_0^2\cos^2\theta}{32\pi^2c^3R^2}\kuohao{\sin^2\phi+\cos^2\theta\cos^2\phi}}
+
+\newpage
+\question{设有线偏振平面波\nota{\e=\e_0\exp{\i\kuohao{kx-\o t}}}照射到一个绝缘介质球上（\nota{\e_0}在\nota{z}方向），引起介质球极化，极化矢量\nota{\bm{P}}是随时间变化的，因而产生辐射。设平面波的波长\nota{2\pi/k}远大于球半径\nota{R_0}，求介质球所产生的辐射场和能流。}
+
+    对于介质球而言\nota{R_0/ \lambda\ll1}，因此介质球可以看作在均匀外场中极化。对于在均匀外场中极化的介质球模型，有我们熟悉的结论\footnote{见郭硕鸿《电动力学（第三版）》第二章\nota{\S3}例2第51页。}，其总电偶极矩为
+    \equa{\p=\frac{4\pi\eps_0\kuohao{\eps-\eps_0}}{\eps+2\eps_0}R_0^3E_0\exp{-\i\o t}}
+    以z轴为北极轴建立球坐标系来描述，
+    其辐射的时谐电磁场的振幅为
+    \equa{\a\kuohao{\x}\exp{\i\o t}=\frac{\muz}{4\pi}\frac{\exp{\i kR}}{R}\dot{\p}=-\frac{\i\o\exp{\i kR}}{c^2R}\frac{\eps-\eps_0}{\eps+2\eps_0}R_0^3E_0\exp{-\i\o t}\danwei{z}}
+    \equa{\b\kuohao{\x}=\xuandu\a=\i k\danwei{R}\times\a=-\frac{\o^2\exp{\i kR}}{c^3R}\frac{\eps-\eps_0}{\eps+2\eps_0}R_0^3E_0\sin\theta\danwei{\phi}}
+    \equa{\e\kuohao{\x}=\frac{\i c}{k}\xuandu\b=c\b\times\danwei{R}=-\frac{\o^2\exp{\i kR}}{c^2R}\frac{\eps-\eps_0}{\eps+2\eps_0}R_0^3E_0\sin\theta\danwei{\theta}}
+    辐射的平均能流密度为
+    \equa{\langle\s\kuohao{\x}\rangle_t=\frac{1}{2}\mathrm{Re}\kuohao{\e^*\times\h}=\frac{c}{2\mu}\det{\b}^2\danwei{R}=\frac{\o^4}{2\muz c^5R^2}\kuohao{\frac{\eps-\eps_0}{\eps+2\eps_0}}^2R_0^6E_0^2\sin^2\theta\danwei{R}}

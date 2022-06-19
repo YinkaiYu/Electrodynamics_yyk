@@ -1,0 +1,196 @@
+\question{火箭由静止状态加速到\nota{v=\sqrt{0.9999c}}。设火箭在其瞬时本征惯性系中的加速度为\nota{\det{\dot{\bm{v}}}=20~\mathrm{m\cdot s^{-2}}}，问按照静止系的时钟和按照火箭内的时钟加速火箭各需多少时间？}
+
+    \footnote{反思我近期的作业，尤其是第六章早期的作业，似乎变得有些偏重表述/计算的简洁而且将重心放在了展现计算细节上。这样一来就很大程度丧失了可读性，同时也在交流的过程中收到同学反映“你那作业真不是给人看的”、“摆明了就是要欺负助教”。于是我希望在接下来为数不多的几次作业中尽量做到将篇幅重点放在物理图像的展示上，而不让计算细节喧宾夺主。望督促。}
+    结合闵可夫斯基空间的其中一种洛伦兹协变表象
+    \footnote{
+        记洛伦兹协变时空坐标
+        \equa{x^\mu=
+        \begin{pmatrix}
+        \i ct & \x
+        \end{pmatrix}\trans
+        }
+        相应的度规为
+        \equa{g_{\mu\nu}=\diag{1&1&1&1}}
+        x-boost洛伦兹变换张量
+        \equa{
+            \zhang{\Lambda}{\mu}{\nu}=
+            \mat{
+                \gamma & -\i\beta\gamma &   &   \\
+                \i\beta\gamma & \gamma &   &   \\
+                  &   & 1 &   \\
+                  &   &   & 1 \\
+            }
+        }
+        特别地，此时有
+        \equa{\Lambda\trans=\Lambda\inv\label{6.4_正交}}
+    }
+    定义快度
+    \footnote{这里定义的快度其实和通常习惯的快度定义\nota{\xi\equiv\tanh\inv\beta}稍有不同，我们的定义多了一个系数\nota{\i}。按照我们所取的这种洛伦兹协变表象（一种比较特殊的仍然采用欧式度规的表象），我们这样的定义会将洛伦兹变换的“旋转”意义展现得更清晰。}
+    \equa{\xi\equiv\tan\inv\kuohao{\i\be}}
+    则洛伦兹变换矩阵可以用快度来描写
+    \equa{\ga=\kuohao{1-\be^2}^{-1/2}=\kuohao{1+\tan^2\xi}^{-1/2}=\cos\xi\label{6.4_1.1}}
+    \equa{-\i\bega=\tan\xi\cos\xi=\sin\xi}
+    \equa{\lor=
+        \mat{
+                \cos\xi & \sin\xi &   &   \\
+                -\sin\xi & \cos\xi &   &   \\
+                  &   & 1 &   \\
+                  &   &   & 1 \\
+            }
+    }
+    可见洛伦兹变换相当于将洛伦兹协变表象的前两个基旋转\nota{\xi}角度，进而速度合成公式
+    \equa{v/c=\frac{v_1/c+v_2/c}{1+v_1v_2/c^2}}
+    即
+    \equa{\tan\xi=\frac{\tan\xi_1+\tan\xi_2}{1-\tan\xi_1\tan\xi_2}=\tan\kuohao{\xi_1+\xi_2}}
+    就相当于旋转角度的叠加
+    \equa{\xi=\xi_1+\xi_2}
+    
+    以上结论表现在本题中即
+    \equa{\d\xi=\d\xi'}
+    在\ckx{'}系中
+    \equa{\dd{\xi'}{t'}=\while{\dd{}{t'}\tan\inv\kuohao{\i\be}}{\be'=0}=\i\dd{\be'}{t'}=\i\frac{a'}{c}\label{6.4_1.2}}
+    其中\nota{a'=20~\mathrm{m\cdot s^{-2}}}。在\ckx{}系中
+    \equa{\dd{\xi}{t}=\i\dd{\be}{t}\cos^2\xi\label{6.4_1.3}}
+    \equa{\d t=\d t'\cos\xi\label{6.4_1.4}}
+    由\neq{6.4_1.1}\neq{6.4_1.2}\neq{6.4_1.3}\neq{6.4_1.4}得
+    \equa{\d t'=\frac{c}{a'}\frac{1}{1-\be^2}\d\be}
+    \equa{\d t=\frac{c}{a'}\frac{1}{\kuohao{1-\be^2}^{3/2}}\d\be}
+    对以上两式积分得按照火箭内的时钟和按照静止系的时钟加速火箭各需的时间
+    \equa{t'=\frac{c}{a'}\int^{\sqrt{0.9999}}_0\frac{1}{1-\be^2}\d\be=2.52~a.}
+    \equa{\d t=\frac{c}{a'}\int^{\sqrt{0.9999}}_0\frac{1}{\kuohao{1-\be^2}^{3/2}}\d\be=47.5~a.}
+    
+\question{质量为\nota{m}的静止粒子衰变为两个粒子\nota{m_1}和\nota{m_2}，求粒子\nota{m_1}的动量和能量。}
+
+    还是在我们选取的欧式度规洛伦兹协变表象下写出各粒子的协变动量
+    \equa{\ket{p_n}\backsimeq\mat{\i\frac{E_n}{c}&\bm{p}_n\\}\label{6.4_2.1}}
+    其中\nota{\backsimeq}表示四维矢量与四维坐标的对应，角标\nota{n}表示对应质量为\nota{m,m_1,m_2}的三个粒子。
+    洛伦兹变换的保度规约束
+    \equa{\langle p_n\ket{p_n}=-m_n^2c^2\label{6.4_2.2}}
+    时空反演对称，四维动量守恒
+    \equa{\ket{p}=\ket{p_1}+\ket{p_2}\label{6.4_2.3}}
+    初态粒子静止
+    \equa{\bm{p}=\bm{0}\label{6.4_2.4}}
+    由\neq{6.4_2.1}\neq{6.4_2.2}\neq{6.4_2.3}\neq{6.4_2.4}得
+    \equa{E_1=\frac{m^2+m_1^2-m_2^2}{2m}c^2}
+    \equa{p_1=\frac{c}{2m}\sqrt{\fkuohao{m^2-\kuohao{m_1^2+m_2^2}}\fkuohao{m^2-\kuohao{m_1^2-m_2^2}}}}
+    
+\question{已知某一粒子\nota{m}衰变成质量为\nota{m_1}和\nota{m_2}，动量为\nota{p_1}和\nota{p_2}（两者方向间的夹角为\nota{\theta}）的两个粒子。求该粒子的质量\nota{m}。}
+
+    将初态\neq{6.4_2.4}替换为几何关系
+    \equa{p^2=p_1^2+p_2^2-2p_1p_2\cos\theta\label{6.4_3.1}}
+    由\neq{6.4_2.1}\neq{6.4_2.2}\neq{6.4_2.3}\neq{6.4_3.1}得
+    \equa{m^2=m_1^2+m_2^2+\frac{2}{c^2}\fkuohao{\sqrt{\kuohao{m_1^2c^2+p_1^2}\kuohao{m_2^2c^2+p_2^2}}-p_1p_2\cos\theta}}
+    
+\question{动量为\nota{\hbar\k}，能量为\nota{\hbar\o}的光子撞在静止的电子上，散射到与入射方向夹角为\nota{\theta}的方向上。证明散射光子的频率变化量为\equa{\o-\o'=\frac{2\hbar}{m_0c^2}\o\o'\sin^2\frac{\theta}{2}}亦即散射光波长\equa{\lambda'=\lambda+\frac{4\pi\hbar}{m_0c}\sin^2\frac{\theta}{2}}\nota{\lambda}为散射前光子波长\nota{2\pi/k}，\nota{m_0}为电子的静止质量。}
+
+    为方便计算，设x轴沿入射方向，散射发生在xy平面，boost到系统的质心系即零动量系中考虑碰撞——在质心系中，完全弹性碰撞就是光子在动量空间中的态的旋转，这样就省去了对碰撞中的能动量交换的考虑。于是散射前后的四维动量的变换为
+    \equa{
+        \mat{\i\frac{\o'}{c}\\\frac{\o'}{c}\cos\theta'\\\frac{\o'}{c}\sin\theta'\\0\\}
+        =
+        \lormat\inv
+        \mat{
+            1& & & \\
+             &\cos\theta_0&-\sin\theta_0& \\
+             &\sin\theta_0&\cos\theta_0& \\
+             & & &1\\
+        }
+        \lormat
+        \mat{\i\frac{\o}{c}\\\frac{\o}{c}\\0\\0\\}
+        \label{6.4_4.1}
+    }
+    其中\nota{\theta_0}就是光子在动量空间中的态的旋转的角度，在上式中消去\nota{\theta_0}就得到了康普顿散射公式。不过其实这里boost到质心系所需的\nota{\be,\ga}还是未知的，剩下的问题就只是计算\nota{\be,\ga}。考虑四维动量守恒和洛伦兹变换保度规约束
+    \equa{{\hbar\mat{\i\frac{\o}{c}\\\frac{\o}{c}\\0\\0\\}+\mat{\i m_0c\\0\\0\\0\\}}=\kuohao{\lor}\inv\mat{\i \frac{E}{c}\\0\\0\\0\\}\label{6.4_4.2}}
+    \equa{\kuohao{\i\frac{E}{c}}^2=\kuohao{\i\frac{\o}{c}+\i m_0c}^2+\kuohao{\i\frac{\o}{c}}^2\label{6.4_4.3}}
+    由\neq{6.4_4.1}\neq{6.4_4.2}\neq{6.4_4.3}得
+    \equa{\lambda'=\lambda+\frac{4\pi\hbar}{m_0c}\sin^2\frac{\theta}{2}}
+    其中\nota{\lambda={2\pi}/{k}={2\pi c}/{\o}}
+
+\question{证明电磁场张量\nota{\zhang{F}{\mu\nu}{}=\partial^\mu A^\nu-\partial^\nu A^\mu}在定域规范变换下不变。}
+
+    实际上\nota{\zhang{F}{\mu\nu}{}}本身就是由规范不变性定义的。此题的逻辑应当理解为证明形式\nota{\zhang{F}{\mu\nu}{}=\partial^\mu A^\nu-\partial^\nu A^\mu}满足定义的要求。
+    
+    规范变换
+    \equa{A^\mu(x)\rightarrow A'^\mu(x)=A^\mu(x)+\pa^\mu\phi(x)}
+    则电磁场张量变为
+    \begin{multline}
+        \zhang{F}{\mu\nu}{}\rightarrow\zhang{F'}{\mu\nu}{}
+        =\partial^\mu A'^\nu-\partial^\nu A'^\mu
+        =\partial^\mu \kuohao{A^\nu+\pa^\nu\phi}-\partial^\nu \kuohao{A^\mu+\pa^\mu\phi}\\
+        =\kuohao{\partial^\mu A^\nu-\partial^\nu A^\mu}+\kuohao{\partial^\mu \pa^\nu-\partial^\nu \pa^\mu}\phi
+        =\zhang{F}{\mu\nu}{}
+    \end{multline}
+    最后一个等号成立的原因是，一般的定域规范变换不引入额外的奇点，\nota{\phi(x)}是处处可微的
+    \equa{\fkuohao{\partial^\mu,\pa^\nu}=0}
+    
+\question{已知纯电磁场的拉格朗日密度为\nota{\mathscr{L}_{em}=\frac{1}{4\muz}\zhang{F}{\mu\nu}{}\zhang{F}{}{\mu\nu}}，以及电磁场与四维电流密度耦合的拉格朗日密度为\nota{\mathscr{L}_{int}=A_\mu J^\mu}，其中重复指标隐含求和。给定四维电流密度下的拉格朗日密度为\nota{\mathscr{L}=\mathscr{L}_{em}+\mathscr{L}_{int}}，根据拉格朗日方程
+\equa{\pa_\al\pd{\mathscr{L}}{\kuohao{\pa_\al A_\la}}-\pd{\mathscr{L}}{A_\la}=0}
+推导电磁场方程。证明在洛伦兹（Lorenz）规范下电磁场方程回到达朗贝尔方程。注意，\nota{\pa_\al A_\la}和\nota{A_\la}是独立变量。
+}
+    
+    \equa{
+        \begin{aligned}
+            \pa_\al\pd{\mathscr{L}}{\kuohao{\pa_\al A_\la}}-\pd{\mathscr{L}}{A_\la}&=0\\
+            \pa_\al\pd{\mathscr{L}_{em}}{\kuohao{\pa_\al A_\la}}-\pd{\mathscr{L}_{int}}{A_\la}&=0\\
+            -\frac{1}{4\muz}\pa_\al\pd{}{\kuohao{\pa_\al A_\la}}\fkuohao{\kuohao{\partial^\mu A^\nu-\partial^\nu A^\mu}\kuohao{\partial_\mu A_\nu-\partial_\nu A_\mu}}-\pd{}{A_\la}\kuohao{A_\mu J^\mu}&=0\\
+            -\frac{2}{4\muz}\pa_\al\pd{}{\kuohao{\pa_\al A_\la}}\fkuohao{\kuohao{\zhang{\delta}{\al}{\mu}\zhang{\delta}{\la}{\nu}-\zhang{\delta}{\al}{\nu}\zhang{\delta}{\la}{\mu}}\kuohao{\partial^\mu A^\nu-\partial^\nu A^\mu}}-\zhang{\delta}{\la}{\mu}J^\mu&=0\\
+            \frac{1}{\muz}\pa_\al\kuohao{\partial^\la A^\al-\partial^\al A^\la}-J^\la&=0\\
+            \pa_\al\zhang{F}{\la\al}{}&=\muz J^\la\\
+        \end{aligned}
+        \label{6.4_6.1}
+    }
+    此即场方程。
+    
+    取洛伦兹规范
+    \equa{\pa_\al A^\al=0}
+    则\neq{6.4_6.1}化为
+    \equa{
+        \begin{aligned}
+            \pa_\al\partial^\la A^\al-\pa_\al\partial^\al A^\la&=\muz J^\la\\
+            0-\kuohao{\pa_\al\partial^\al} A^\la&=\muz J^\la\\
+            \kuohao{\pa_\al\partial^\al} A^\la&=-\muz J^\la\\
+        \end{aligned}
+    }
+    此即达朗贝尔方程。
+    更具体地有
+    \equa{\pa_\al\partial^\al=-\frac{1}{c^2}\pa_t^2+\nabla^2}
+    
+\question{定义对偶电磁场张量为（重复指标隐含求和）
+\equa{\zhang{\tilde{F}}{\mu\nu}{}=\frac{1}{2\i}\eps^{\mu\nu\al\be}\pa_\mu F_{\al\be}}
+证明在电磁势连续可导的区域，对偶电磁场方程满足Bianchi恒等式：\nota{\pa_mu\zhang{\tilde{F}}{\mu\nu}{}=0}
+}
+
+    \equa{\pa_\mu\zhang{\tilde{F}}{\mu\nu}{}=\frac{1}{2\i}\eps^{\mu\nu\al\be}\pa_\mu F_{\al\be}=-\frac{1}{2\i}\eps^{\nu\mu\al\be}\pa_\mu F_{\al\be}}
+    轮换哑指标\nota{\mu,\al,\be}，得到三个相等的项
+    \equa{
+         \eps^{\nu\mu\al\be}\pa_\mu F_{\al\be}
+        =\eps^{\nu\al\be\mu}\pa_\al F_{\be\mu}
+        =\eps^{\nu\be\mu\al}\pa_\be F_{\mu\al}
+    }
+    可以将\nota{\zhang{\tilde{F}}{\mu\nu}{}}用这三个项的平均表示出来
+    \equa{
+        \begin{aligned}
+            \pa_\mu\zhang{\tilde{F}}{\mu\nu}{}
+            &= -\frac{1}{6\i}\kuohao{
+                 \eps^{\nu\mu\al\be}\pa_\mu F_{\al\be}
+                +\eps^{\nu\al\be\mu}\pa_\al F_{\be\mu}
+                +\eps^{\nu\be\mu\al}\pa_\be F_{\mu\al}
+                } \\
+            &= -\frac{1}{6\i}\eps^{\nu\mu\al\be}\fkuohao{
+                  \pa_\mu \kuohao{ \pa_\al A_\be - \pa_\be A_\al }
+                + \pa_\al \kuohao{ \pa_\be A_\mu - \pa_\mu A_\be }
+                + \pa_\be \kuohao{ \pa_\mu A_\al - \pa_\al A_\mu }
+                } \\
+        \end{aligned}
+    }
+    在电磁势连续可导的区域
+    \equa{\fkuohao{\partial_\al,\pa_\be}=0}
+    则可进一步化简为
+    \equa{
+        \pa_\mu\zhang{\tilde{F}}{\mu\nu}{}
+        =-\frac{1}{6\i}\kuohao{
+              \fkuohao{\partial_\al,\pa_\be}A_\mu
+            + \fkuohao{\partial_\be,\pa_\mu}A_\al
+            + \fkuohao{\partial_\mu,\pa_\al}A_\be
+            }
+        =0
+    }

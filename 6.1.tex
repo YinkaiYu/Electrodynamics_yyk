@@ -1,0 +1,88 @@
+\question{证明牛顿定律在伽利略变换下是协变的，麦克斯韦方程在伽利略变换下不是协变的。}
+
+    方便起见，以一维伽利略变换为例。
+    \equa{
+        \begin{cases}
+            x'=x-vt \\
+            t'=t \\
+        \end{cases}
+        \label{6.1x伽利略变换}
+    }
+    由(\ref{6.1x伽利略变换})得
+    \equa{u'=\dot{x'}=\dot{x}-v=u-v}
+    此即牛顿第一定律：在不同的惯性系中，作惯性运动的物体始终作惯性运动。
+    
+    下面证牛顿第二定律是协变的。通常来讲，力的定义式就是
+    \equa{F=m\dd{u}{t}}
+    但是在\nota{\Sigma'}系中，上式却是需要我们证明的协变方程，因此不能用上式定义\nota{F'}，而要等价地定义为
+    \equa{F'=F}
+    \equa{m'=m}
+    则在在\nota{\Sigma'}系中有
+    \equa{F'=F=m\dd{u}{t}=m\dd{u-v}{t}=m'\dd{u'}{t'}}
+    于是得证牛顿定律在不同惯性系中有相同的形式。
+    
+    对于麦克斯韦方程，采用反证法。假设麦克斯韦方程在伽利略变换下协变，则可以作如下推论。在真空中
+    \equa{\xuandu\e=-\pd{\b}{t}\label{6.1x1}}
+    \equa{\sandu\e=0\label{6.1x2}}
+    \equa{\xuandu\b=\muz\eps_0\pd{\e}{t}\label{6.1x3}}
+    对\neq{6.1x1}两边取旋度，并结合\neq{6.1x2}\neq{6.1x3}得
+    \equa{\xuandu\kuohao{\xuandu\e}=-\pd{}{t}\xuandu\b}
+    \equa{\tidu\kuohao{\sandu\e}-\tidu^2\e=-\muz\eps_0\ppd{\e}{t}}
+    即
+    \equa{\tidu^2\e-\muz\eps_0\ppd{\e}{t}=0}
+    此即电场的波动方程，其群速度为
+    \equa{u=\frac{1}{\sqrt{\muz\eps_0}}\label{6.1x群速1}}
+    如果麦克斯韦方程组在伽利略变换下协变，则上述推导亦是协变的，电场的波动方程也协变，有
+    \equa{\tidu'^2\e'-\muz\eps_0\ppd{\e'}{t'}=0}
+    其群速度为
+    \equa{u'=\frac{1}{\sqrt{\muz\eps_0}}\label{6.1x群速2}}
+    取群速度方向为x轴作v-boost伽利略变换，则要求
+    \equa{u'=u-v\label{6.1x群速伽利略}}
+    \neq{6.1x群速1}\neq{6.1x群速2}\neq{6.1x群速伽利略}矛盾，原假设不能成立，故麦克斯韦方程在伽利略变换下不是协变的。
+    
+
+\question{设有两根互相平行的尺，在各自静止的参考系中长度均为\nota{l_0}，它们以相同速率v相对于某一参考系运动，但运动方向相反，且平行于尺子。求站在一根尺上测量另一根尺的长度。}
+
+    取观察者所站的尺子的运动方向为x轴正方向，记地面系为\nota{\Sigma}，观察者所站的尺子的静止参考系为\nota{\Sigma'}，被观察的尺子的静止参考系为\nota{\Sigma''}。在三个参考系的时空原点处，两把尺子的左端对齐。
+    
+    考虑这样一个世界点（事件），在\nota{\Sigma'}系中，观察者在\nota{x'^0=0}时刻
+    \footnote{
+        记洛伦兹矢量
+        \equa{x^\mu=
+        \begin{pmatrix}
+        \i ct & \x
+        \end{pmatrix}\trans
+        }
+        相应的度规为
+        \equa{g_{\mu\nu}=\diag{1&1&1&1}}
+        洛伦兹变换张量
+        \equa{
+            \zhang{\Lambda}{\mu}{\nu}=
+            \mat{
+                \gamma & -\i\beta\gamma & 0 & 0 \\
+                \i\beta\gamma & \gamma & 0 & 0 \\
+                0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 1 \\
+            }
+        }
+        特别地，此时有
+        \equa{\Lambda\trans=\Lambda^{-1}\label{6.1x正交}}
+    }
+    测量待测尺右端的空间坐标\nota{x'^1}。同时知道了\nota{x'^0=0}时刻的待测尺两端坐标，观察者就可以在\nota{\Sigma'}系中读出尺长
+    \equa{l=x'^1-0=x'^1\label{6.1xb1}}
+    “观察者在\nota{x'^0=0}时刻测量待测尺右端的空间坐标\nota{x'^1}”记为世界点
+    \equa{x'^\mu=\mat{0&x'^1&0&0\\}\trans}
+    有洛伦兹变换\footnote{采用爱因斯坦求和约定。}（\nota{x^1}-boost）
+    \equa{x'^\mu=\zhang{\Lambda}{\mu}{\nu}x^\nu\label{6.1x洛伦兹1}}
+    \equa{x''^\sigma=\zhang{\kuohao{\Lambda^{-1}}}{\sigma}{\nu}x^\nu\label{6.1x洛伦兹2}}
+    其中
+    \equa{\beta=\frac{v}{c}\qquad\gamma=\frac{1}{\sqrt{1-\beta^2}}\label{6.1xb2}}
+    由\neq{6.1x洛伦兹1}\neq{6.1x洛伦兹2}\neq{6.1x正交}得
+    \equa{x''^\sigma=\zhang{\kuohao{\Lambda\trans}}{\sigma}{\nu}\zhang{\kuohao{\Lambda\trans}}{\nu}{\mu}x'^\mu}
+    其中具体地有
+    \equa{x''^1=\kuohao{1+\beta^2}\gamma^2x'^1\label{6.1xb3}}
+    而在\ckx{''}中显然该世界点同样出现在尺子右端，即
+    \equa{x''^1=l_0\label{6.1xb4}}
+    由\neq{6.1xb1}\neq{6.1xb2}\neq{6.1xb3}\neq{6.1xb4}得
+    \equa{l=\frac{1-v^2/c^2}{1+v^2/c^2}l_0}
+

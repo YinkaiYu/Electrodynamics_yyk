@@ -1,0 +1,100 @@
+\question{有一带电荷\nota{q}的粒子沿\nota{z}轴作简写振动\nota{z=z_0\exp{-\i\o t}}设\nota{z_0\o\ll c}，求：}
+
+    \subquestion{它的辐射场和能流；}
+    
+        由题可知，对于点源有
+        \equa{\x_q\kuohao{t'}=z_0\exp{-\i\o t'}\danwei{z}\label{7.2_1.1}}
+        \equa{\dot{\x}_q\kuohao{t'}=-\i z_0\o\exp{-\i\o t'}\danwei{z}}
+        \equa{\ddot{\x}_q\kuohao{t'}=-z_0\o^2\exp{-\i\o t'}\danwei{z}}
+        由\nota{z_0\o\ll c}知
+        \equa{\det{\dot{\x}_q}\ll c\label{7.2_1.disu}}
+        即，粒子做低速运动。在低速近似下，辐射场为
+        \equa{\e_\mathrm{rad}=\frac{1}{4\pi\eps c^2}\frac{q}{r}\danwei{r}\times\kuohao{\danwei{r}\times\dot{\v}}\label{7.2_1.4}}
+        \equa{\b_\mathrm{rad}=\frac{1}{c}\danwei{r}\times\e_\mathrm{rad}\label{7.2_1.5}}
+        其中
+        \equa{r=\det{\x\kuohao{t}-\x_q\kuohao{t'}}=c\kuohao{t-t'}\label{7.2_1.2}}
+        \equa{\v=\dot{\x}_q\kuohao{t'}\label{7.2_1.6}}
+        由\neq{7.2_1.1}\neq{7.2_1.2}得
+        \equa{\sqrt{\kuohao{\x-z_0\exp{-\i\o t'}\danwei{z}}^2}=c\kuohao{t-t'}\label{7.2_1.3}}
+        解\neq{7.2_1.3}可以确定\nota{t'\kuohao{\x,t}}，但\neq{7.2_1.3}是个超越方程，故我们无法由\neq{7.2_1.4}\neq{7.2_1.5}\neq{7.2_1.2}\neq{7.2_1.6}\neq{7.2_1.3}得到\nota{\e_\mathrm{rad}}和\nota{\b_\mathrm{rad}}的显明表达式。
+        
+        此题写到这里已经可以结束了。
+        
+        我们接下来再讨论一类特殊情况。考虑
+        \equa{z_0\ll\det{\x}=R\label{7.2_1.yuanc}}
+        此即远场近似条件，需注意它与低速条件\neq{7.2_1.disu}是独立的，题目本身不包含远场条件\neq{7.2_1.yuanc}。
+        \footnote{如果同学忽视了这一点，通常会得到形式上正确的结果，但是其推导是不合逻辑的，物理图像也不正确。}
+        在远场近似下，\neq{7.2_1.2}可作零阶近似为
+        \equa{c\kuohao{t-t'}=R}
+        解得
+        \equa{t'=t-\frac{R}{c}\label{7.2_1.7}}
+        同时有零阶近似结果
+        \equa{r=R\label{7.2_1.8}}
+        \equa{\danwei{r}=\danwei{R}\label{7.2_1.9}}
+        将\neq{7.2_1.2}\neq{7.2_1.6}\neq{7.2_1.7}\neq{7.2_1.8}\neq{7.2_1.9}代入\neq{7.2_1.4}\neq{7.2_1.5}得
+        \equa{\e_\mathrm{rad}\kuohao{\x,t}=-\frac{\mu_0\o^2qz_0\sin\theta}{4\pi R}\exp{-\i\o\kuohao{t-R/c}}\danwei{\theta}}
+        \equa{\b_\mathrm{rad}\kuohao{\x,t}=-\frac{\mu_0\o^2qz_0\sin\theta}{4\pi c R}\exp{-\i\o\kuohao{t-R/c}}\danwei{\phi}}
+        其中\nota{\danwei{\theta},\danwei{\phi}}是以z轴为极轴的球坐标右手系\nota{O-R\theta\phi}的方向单位矢量。
+        
+        据此计算远场的能流密度，其瞬时值为
+        \equa{\s=\frac{1}{\mu_0}\re\e\times\re\b=\frac{\mu_0\o^4q^2z_0^2}{16\pi^2cR^2}\sin^2\theta\cos^2\kuohao{\o t-\o R/c}\danwei{R}}
+        其对时间的平均值
+        \equa{\qiwang{\s}_t=\frac{1}{2\mu_0}\re\kuohao{\e^*\times\b}=\frac{\mu_0\o^4q^2z_0^2}{32\pi^2cR^2}\sin^2\theta\danwei{R}}
+    
+    \subquestion{它的自场；比较两者的不同。}
+    
+        低速近似下自场（库伦场）的公式
+        \equa{\e_\mathrm{c}=\frac{1}{4\pi\eps_0}\frac{q}{r^2}\danwei{r}}
+        \equa{\b_\mathrm{c}=\frac{\mu_0}{4\pi}\frac{q\v\times\danwei{r}}{r^2}}
+        远场近似解
+        \equa{\e_\mathrm{c}\kuohao{\x,t}=\frac{1}{4\pi\eps_0}\frac{q}{R^2}\danwei{R}}
+        \equa{\b_\mathrm{c}\kuohao{\x,t}=\frac{\mu_0}{4\pi}\frac{q\v\times\danwei{R}}{R^2}}
+        
+        自场与辐射场的不同在于，自场正比于\nota{1/R^2}而辐射场正比于\nota{1/R}——在远场条件下，自场远远小于辐射场。此外，自场的电场是沿径向的，而辐射场的电场是垂直于径向的。
+    
+\question{带电荷\nota{q}的粒子在\nota{xy}平面上绕\nota{z}轴作匀速率圆周运动，角频率为\nota{\o}，半径为\nota{R_0}。设\nota{\o R_0 \ll c}，试计算辐射场的频率和能流密度，讨论\nota{\theta=0,\frac{\pi}{4},\frac{\pi}{2}}及\nota{\pi}处电磁场的振幅。}
+
+    建立球坐标右手系，以\nota{z}轴为极轴。我们研究场点\nota{\kuohao{R,\theta,\phi}}处的辐射场。
+    同时直角坐标系的\nota{x}轴取为沿球坐标\nota{\phi=0}的方向，取时间零点至场源粒子在\nota{\phi=0}的方向。即有几何关系
+    \equa{\danwei{x}=\sin\theta\danwei{r}+\cos\theta\danwei{\phi}\label{7.2_2.jihe1}}
+    \equa{\danwei{y}=\danwei{\phi}\label{7.2_2.jihe2}}
+    记场源粒子的运动为
+    \equa{\x_q=R_0\exp{\i\o t'}\kuohao{\danwei{x}-\i\danwei{y}}}
+    \equa{\dot{\x_q}=\i\o R_0\exp{\i\o t'}\kuohao{\danwei{x}-\i\danwei{y}}}
+    \equa{\ddot{\x_q}=-\o^2 R_0\exp{\i\o t'}\kuohao{\danwei{x}-\i\danwei{y}}}
+    题目条件\nota{\o R_0\ll c}知
+    \equa{\det{\dot{\x_q}}\ll c}
+    此即低速近似条件，低速近似下的辐射场公式为
+    \equa{\e=\frac{1}{4\pi\eps c^2}\frac{q}{r}\danwei{r}\times\kuohao{\danwei{r}\times\dot{\v}}\label{7.2_2.1}}
+    \equa{\b=\frac{1}{c}\danwei{r}\times\e\label{7.2_2.2}}
+    
+    与上一题同理，\nota{\e\kuohao{\x,t},\e\kuohao{\x,t}}无解析解，但可在远场近似
+    \equa{R_0\ll\det{\x}=R}
+    条件下写出解析解。上一题得到了如下远场近似的零阶推论
+    \equa{\r=\bm{R}\label{7.2_2.3}}
+    \equa{\dot{\v\kuohao{t'}}=\dot{\v\kuohao{t-R/c}}\label{7.2_2.4}}
+    将\neq{7.2_2.3}\neq{7.2_2.4}代入\neq{7.2_2.1}\neq{7.2_2.2}得
+    \equa{\e\kuohao{\x,t}=\frac{q \o^2R_0}{4\pi\eps_0c^2R}\kuohao{-\cos\theta\danwei{\theta}-\i\danwei{\phi}}\exp{\i\o\kuohao{t-R/c}}\label{7.2_2.5}}
+    \equa{\b\kuohao{\x,t}=\frac{q \o^2R_0}{4\pi\eps_0c^3R}\kuohao{\i\danwei{\theta}-\cos\theta\danwei{\phi}}\exp{\i\o\kuohao{t-R/c}}\label{7.2_2.6}}
+    计算过程中，可以利用几何关系\neq{7.2_2.jihe1}\neq{7.2_2.jihe2}将矢量运算在\nota{\kuohao{\danwei{r},\danwei{\theta},\danwei{\phi}}}表象下用坐标来计算，这样是相当好算的。
+    
+    从结果\neq{7.2_2.5}\neq{7.2_2.6}可见，不管场点取在何处，辐射场的频率都与粒子作匀速圆周运动的频率一致。此之谓同步辐射。
+    
+    辐射场的能流瞬时值
+    \equa{\s=\frac{1}{\mu_0}\re\e\times\re\b=\frac{q^2\o^4R_0^2}{16\pi^2\eps c^3R^2}\kuohao{1+\cos^2\theta}\cos^2\kuohao{\o t-\o R/c}\danwei{R}}
+    其对一个周期的平均值为
+    \equa{\qiwang{\s}=\frac{1}{\mu_0}\re\e\times\re\b=\frac{q^2\o^4R_0^2}{32\pi^2\eps c^3R^2}\kuohao{1+\cos^2\theta}\danwei{R}}
+    
+    接下来讨论电场的偏振。对于场点观测到的电场，我们记其在\nota{\danwei{\theta}}方向的分量为\nota{E_\theta}，\nota{\danwei{\phi}}方向的分量为\nota{E_\phi}。同时我们这里采用的左旋光定义为迎着波矢方向即\nota{\danwei{R}}方向观测，电场强度矢量逆时针旋转\footnote{另一种定义方式恰好相反，不同书对此定义就在这之间二选一，好像也没有什么主流的统一意见。反正我们这里用这种。}。
+    
+    当\nota{\theta=0}时
+    \equa{\while{E_\phi\kuohao{t}}{\theta=0}=\while{\i E_\theta\kuohao{t}}{\theta=0}=\while{E_\theta\kuohao{t+\frac{\pi}{2}}}{\theta=0}}
+    即\nota{E_\phi}比\nota{E_\theta}相位超前\nota{\frac{\pi}{2}}，且振幅相等。结合右手系的定义可知此处观测到的是右旋圆偏振光。
+    
+    当\nota{\theta=\frac{\pi}{4}}时
+    \equa{\while{E_\phi\kuohao{t}}{\theta=\frac{\pi}{4}}=\while{\sqrt{2}\i E_\theta\kuohao{t}}{\theta=\frac{\pi}{4}}=\while{\sqrt{2}E_\theta\kuohao{t+\frac{\pi}{2}}}{\theta=\frac{\pi}{4}}}
+    即\nota{E_\phi}比\nota{E_\theta}相位超前\nota{\frac{\pi}{2}}，且前者振幅为后者的\nota{\sqrt{2}}倍。此处观测到的是右旋椭圆偏振光。
+    
+    当\nota{\theta=\frac{\pi}{2}}时
+    \equa{\while{E_\phi\kuohao{t}}{\theta=\frac{\pi}{2}}\ne 0 \qquad \while{E_\theta\kuohao{t}}{\theta=\frac{\pi}{2}}=0}
+    此处观测到的是电场分量平行于\nota{\danwei{\phi}}方向的线偏振光。

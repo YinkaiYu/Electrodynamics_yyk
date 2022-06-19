@@ -1,0 +1,39 @@
+\question{写出电磁场强和电磁势的关系、一般规范变换。}
+
+    电磁场强和电磁势的关系
+    \equa{\b=\xuandu\a\label{5.1_矢势定义}}
+    \equa{\e=-\tidu\ph-\pd{\a}{t}\label{5.1_标势定义}}
+    
+    一般规范变换
+    \equa{\a\to\a'=\a+\tidu\psi}
+    \equa{\ph\to\ph'=\ph-\pd{\psi}{t}}
+
+\question{从真空麦克斯韦方程组推导一般电磁势满足的基本方程。}
+
+    真空麦克斯韦方程组
+    \equa{\xuandu\e=-\pd{\b}{t}\label{5.1_maxwell1}}
+    \equa{\xuandu\h=\pd{\d}{t}+\j\label{5.1_maxwell2}}
+    \equa{\sandu\d=\rho\label{5.1_maxwell3}}
+    \equa{\sandu\b=0\label{5.1_maxwell4}}
+    其中
+    \equa{\d=\varepsilon_0\e\qquad\b=\muz\h}
+    
+    麦克斯韦方程组的\neq{5.1_maxwell1}和\neq{5.1_maxwell4}已经体现在电磁势的定义\neq{5.1_矢势定义}\neq{5.1_标势定义}中。对于剩下的\neq{5.1_maxwell2}\neq{5.1_maxwell3}两条，将\neq{5.1_矢势定义}\neq{5.1_标势定义}代入\neq{5.1_maxwell2}得
+    \equa{\xuandu\kuohao{\xuandu\a}=\muz\varepsilon_0\pd{}{t}\kuohao{-\tidu\ph-\pd{\a}{t}}+\muz\j}
+    即
+    \equa{\tidu\kuohao{\sandu\a}-\tidu^2\a=-\frac{1}{c^2}\tidu\kuohao{\pd{\ph}{t}}-\frac{1}{c^2}\ppd{\a}{t}+\muz\j}
+    其中
+    \equa{\frac{1}{c^2}=\muz\varepsilon_0}
+    移项、整理得
+    \equa{\tidu^2\a-\frac{1}{c^2}\ppd{\a}{t}-\tidu\kuohao{\sandu\a+\frac{1}{c^2}\pd{\ph}{t}}=-\muz\j\label{5.1_达朗贝尔1}}
+    又将\neq{5.1_矢势定义}\neq{5.1_标势定义}代入\neq{5.1_maxwell3}得
+    \equa{\varepsilon_0\sandu\kuohao{-\tidu\ph-\pd{\a}{t}}=\rho}
+    即
+    \equa{\nabla^2\ph+\pd{}{t}\kuohao{\sandu\a}=\frac{\rho}{\varepsilon_0}\label{5.1_达朗贝尔2}}
+    \neq{5.1_达朗贝尔1}\neq{5.1_达朗贝尔2}即为一般电磁势在真空中满足的基本方程。若取洛伦兹规范，则\neq{5.1_达朗贝尔1}\neq{5.1_达朗贝尔2}转化为达朗贝尔方程。
+
+\question{证明\nota{f\kuohao{t-r/c}}满足下一维波动方程：\nota{\ppd{f}{r}-\frac{1}{c^2}\ppd{f}{t}=0}。}
+
+    将\nota{f\kuohao{t-r/c}}的形式代入波动方程\nota{\ppd{f}{r}-\frac{1}{c^2}\ppd{f}{t}=0}，得
+    \equa{\mathrm{LHS.}=\ppd{}{r}f\kuohao{t-r/c}-\frac{1}{c^2}\ppd{}{t}f\kuohao{t-r/c}=\kuohao{-\frac{1}{c}}^2f''-\frac{1}{c^2}f''=0=\mathrm{RHS.}}
+    证毕。

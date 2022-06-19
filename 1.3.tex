@@ -1,0 +1,149 @@
+\question{一个半径为\ss{R}的电介质求，极化强度为\equa{{\bm{P}=K\frac{\r}{r^2}}\label{P}}电容率为\ss{\er{}}.}
+
+\subquestion{计算束缚电荷的体密度和面密度；}
+
+    
+    在介质球内（或者在介质球外的真空，当然其显然无束缚电荷），有极化强度的“泊松方程”
+    \begin{equation}
+        \sandu{}\bm{P}{} = -\rho_P \quad (r<R).\label{束缚电荷体密度方程}
+    \end{equation}
+    在介质球表面，有极化强度的边值关系
+    \begin{equation}
+        \bm{\mathrm{e}}_r\cdot(0-\bm{P})=-\sigma_P \quad (r=R).\label{束缚电荷面密度方程}
+    \end{equation}
+    由(\ref{P})(\ref{束缚电荷体密度方程})(\ref{束缚电荷面密度方程})得束缚电荷的分布
+    \begin{equation}
+        \rho_P = -\frac{K}{r^2}\quad (r<R),\label{束缚电荷体密度}
+    \end{equation}
+    \begin{equation}
+        \sigma_P = \frac{K}{R}.\label{束缚电荷面密度}
+    \end{equation}        
+
+    根据电位移矢量的高斯定理容易得到自由电荷的分布。由
+    \begin{equation}
+        \sandu{}\d{} = \rho_f \quad(r<R),
+    \end{equation}
+    \begin{equation}
+        \d{} = \er{}\e{},
+        \label{7}
+    \end{equation}
+    \begin{equation}
+        \d{}=\eo{}\e{}+\bm{P}{},\label{8}
+    \end{equation}
+    得
+    \begin{equation}
+        \rho_f = \frac{\er{}}{\er{}-\eo{}}\frac{K}{r^2} \quad(r<R).
+    \end{equation}
+    
+    上式给出了自由电荷在介质球内的分布，对于介质球外的真空，显然是没有自由电荷的，但是\textbf{介质球的表面是否有自由电荷是无法确定的，题目条件只能将自由电荷在介质球面的面密度分布确定至一任意的均匀常数}。这是因为，如果球面带有一层均匀的自由电荷，这部分电荷对球内的电场强度为零，不会影响介质球内的极化，因此在题目只给出极化强度分布的情况下，我们是无法确定这一任意的均匀常数的。
+    
+    为了便于下面的计算，我们暂时假定介质球的表面是没有自由电荷的。最后我们再根据叠加原理给出介质球表面的自由电荷项带来的影响。
+    
+    取无穷远为电势能零点，我们计算电势在空间中的分布。首先求出电位移矢量的分布，在球外有
+    \begin{equation}
+        \sandu{}\d{}=0 \quad(r>R),\label{10}
+    \end{equation}
+    根据系统的球对称特点，上式具体表现为
+    \begin{equation}
+        4\pi R^2\d{}|_{r=R} = 4\pi r^2\d{}|_{r>R}.\label{11}
+    \end{equation}
+    由(\ref{7})(\ref{8})(\ref{10})(\ref{11})得
+    \begin{equation}
+        \d{}=
+        \left\{
+        \begin{aligned}
+        	&\frac{\er{}}{\er{}-\eo{}}\frac{K\r{}}{r^2} &\quad (r<R) \\
+        	&\frac{\er{}}{\er{}-\eo{}}\frac{KR\r{}}{r^3} &\quad (r\ge R) 
+    	\end{aligned}
+        \right.
+    \end{equation}
+    则可由(\ref{7})得到电场强度分布
+    \begin{equation}
+        \e{}=
+        \left\{
+        \begin{aligned}
+        	&\frac{1}{\er{}-\eo{}}\frac{K\r{}}{r^2} &\quad (r<R) \\
+        	&\frac{\er{}/\eo{}}{\er{}-\eo{}}\frac{KR\r{}}{r^3} &\quad (r\ge R) 
+    	\end{aligned}
+        \right.
+    \end{equation}
+    根据球对称性质积分
+    \begin{equation}
+        \varphi(r) = -\int_{\infty}^r\e{}\mathrm{d}r = 
+        \left\{
+        \begin{aligned}
+        	&\frac{K}{\er{}-\eo{}}\left(\ln \frac{R}{r}+\frac{\er{}}{\eo{}}\right) &\quad (r<R) \\
+        	&\frac{\er{}/\eo{}}{\er{}-\eo{}}\frac{KR}{r} &\quad (r\ge R) 
+    	\end{aligned}
+        \right.
+    \end{equation}
+
+    根据电位移矢量分布和电场强度分布还可以计算出（线性介质）静电场能量密度
+    \begin{equation}
+        w = \frac{1}{2}\d{}\cdot\e{}=
+        \left\{
+        \begin{aligned}
+        	&\frac{1}{2}\frac{\er{}}{(\er{}-\eo{})^2}\left(\frac{K}{r}\right)^2 &\quad (r<R) \\
+        	&\frac{1}{2}\frac{\er{}^2/\eo{}}{(\er{}-\eo{})^2}\left(\frac{KR}{r^2}\right)^2 &\quad (r\ge R) 
+    	\end{aligned}
+        \right.
+    \end{equation}
+    则静电场的总能量为
+    \begin{multline}
+        W=\int_\infty w\mathrm{d}V=\\
+        \int_0^R\frac{1}{2}\frac{\er{}}{(\er{}-\eo{})^2}\left(\frac{K}{r}\right)^2 4\pi r^2\mathrm{d}r 
+        + \int_R^\infty \frac{1}{2}\frac{\er{}^2/\eo{}}{(\er{}-\eo{})^2}\left(\frac{KR}{r^2}\right)^2 4\pi r^2\mathrm{d}r\\
+        = 2\pi R K^2\frac{\er{}}{(\er{}-\eo{})^2}\left(1+\frac{\er{}}{\eo{}}\right)
+    \end{multline}
+    
+    % 我这里写得不对！
+    
+    % 注意，如果使用等效公式
+    % \begin{equation}
+    %     W = \int_V \rho \varphi(r) \mathrm{d}V
+    % \end{equation}
+    % 来计算静电场的总能量，其中的$\rho$除了需要考虑球内$\rho_f$和$\rho_P$的代数和之外，还需要考虑球面的束缚电荷带来的影响，即
+    % \begin{equation}
+    %     \int_S \sigma_P \varphi(R) \mathrm{d}S
+    % \end{equation}
+    % 这一项，这是相当容易遗漏的。
+
+    最后，我们考虑球面上的任意均匀常数自由电荷分布对上述结果的影响。设球面上有均匀的自由电荷面密度$\sigma_f$，则线性的电势、电位移、电场强度项都可以由叠加原理给出
+    \begin{equation}
+        \d{}'=
+        \left\{
+        \begin{aligned}
+        	&\frac{\er{}}{\er{}-\eo{}}\frac{K\r{}}{r^2} &\quad (r<R) \\
+        	&\frac{\er{}}{\er{}-\eo{}}\frac{KR\r{}}{r^3} + \frac{R^2\r{}}{r^3}\sigma_f &\quad (r\ge R) 
+    	\end{aligned}
+        \right.
+    \end{equation}
+    \begin{equation}
+        \e{}'=
+        \left\{
+        \begin{aligned}
+        	&\frac{1}{\er{}-\eo{}}\frac{K\r{}}{r^2} &\quad (r<R) \\
+        	&\frac{\er{}/\eo{}}{\er{}-\eo{}}\frac{KR\r{}}{r^3} + \frac{R^2\r{}}{r^3}\frac{\sigma_f}{\eo{}} &\quad (r\ge R) 
+    	\end{aligned}
+        \right.
+    \end{equation}
+    \begin{equation}
+        \varphi(r)' = -\int_{\infty}^r\e{}\mathrm{d}r = 
+        \left\{
+        \begin{aligned}
+        	&\frac{K}{\er{}-\eo{}}\left(\ln \frac{R}{r}+\frac{\er{}}{\eo{}}\right) + \frac{\sigma_f}{\eo{}}R&\quad (r<R) \\
+        	&\frac{\er{}/\eo{}}{\er{}-\eo{}}\frac{KR}{r} + \frac{\sigma_f}{\eo{}}\frac{R^2}{r} &\quad (r\ge R) 
+    	\end{aligned}
+        \right.
+    \end{equation}
+    静电场的总能量则会带有非线性的附加项
+    \begin{multline}
+        W'=\int_\infty \frac{1}{2}\d{}'\cdot\e{}'\mathrm{d}V=
+        \int_0^R\frac{1}{2}\frac{\er{}}{(\er{}-\eo{})^2}\left(\frac{K}{r}\right)^2 4\pi r^2\mathrm{d}r \\
+        + \int_R^\infty \left[ \frac{1}{2}\frac{\er{}^2/\eo{}}{(\er{}-\eo{})^2}\left(\frac{KR}{r^2}\right)^2 
+        + \frac{1}{2}\left(\frac{R^2}{r^2}\right)^2\frac{\sigma_f^2}{\eo{}}
+        + \frac{\er{}/\eo{}}{\er{}-\eo{}}\frac{KR\r{}}{r^3} \frac{R^2\r{}}{r^3}\sigma_f 
+        \right] 4\pi r^2 \mathrm{d}r\\
+        = 2\pi R K^2\frac{\er{}}{(\er{}-\eo{})^2}\left(1+\frac{\er{}}{\eo{}}\right)
+        + 2\pi R^3 \frac{\sigma_f^2}{\eo{}} + 4\pi R^2 \frac{\er{}/\eo{}}{\er{}-\eo{}} K \sigma_f
+    \end{multline}

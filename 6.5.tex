@@ -1,0 +1,89 @@
+\question{在狭义相对论中粒子的动量为\nota{\p =m\v}，
+其中\nota{\v=\dd{\x}{t},m=\ga m_0}； 粒子的动能\nota{T=mc^2-m_0c^2}； 粒子受到的力\nota{\bm{F}}等于其动量变化率。请证明动能变化定理\nota{\d T = \f\d\x}}
+
+    由质能关系和相对论动力学关系
+    \footnote{在相对论的运算中简记\equa{\be=v/c\qquad\ga=\frac{1}{\sqrt{1-\be^2}}}}
+    \equa{W=mc^2=\ga m_0c^2}
+    \equa{W^2=m_0^2c^4+p^2c^2}
+    可以证明
+    \begin{multline}
+        \lhs
+        =\d\kuohao{W-m_0c^2}
+        =\d W
+        =\d\sqrt{m_0^2c^4+p^2c^2}
+        =\frac{c^2}{W}\p\cdot\d\p \\
+        =\frac{c^2}{mc^2}m\v\cdot\d\p
+        =\v\cdot\p
+        =\dd{\x}{t}\cdot\d\p
+        =\d\x\dd{\p}{t}
+        =\f\cdot\d\x=\rhs
+    \end{multline}
+
+\question{请证明洛伦兹力密度（作用在单位体积带电物质的洛伦兹力）\nota{\bm{f}=\rho\e+\j\times\b}是一个狭义相对论协变矢量的前三个分量。求出此协变量的第四分量。}
+
+    定义一个洛伦兹协变矢量
+    \footnote{
+        记洛伦兹协变时空坐标
+        \equa{x^\mu=
+        \begin{pmatrix}
+         \x & \i ct
+        \end{pmatrix}\trans
+        }
+        相应的度规为
+        \equa{g_{\mu\nu}=\diag{1&1&1&1}}
+        % x-boost洛伦兹变换张量
+        % \equa{
+        %     \zhang{\Lambda}{\mu}{\nu}=
+        %     \mat{
+        %         \gamma & -\i\beta\gamma &   &   \\
+        %         \i\beta\gamma & \gamma &   &   \\
+        %           &   & 1 &   \\
+        %           &   &   & 1 \\
+        %     }
+        % }
+        % 特别地，此时有
+        % \equa{\Lambda\trans=\Lambda\inv\label{6.5_正交}}
+    }
+    \equa{f_\mu=\zhang{F}{\mu\nu}{}J_\nu\label{6.5_2.1}}
+    由于\nota{\zhang{F}{\mu\nu}{}}是洛伦兹协变张量，\nota{J_\nu}是洛伦兹协变矢量，而\nota{f_\mu}由\nota{\zhang{F}{\mu\nu}{}}与\nota{J_\nu}缩并而来，故显然这样定义的\nota{f_\mu}是洛伦兹协变的矢量。
+    
+    下面我们证明\nota{\bm{f}}的三个分量就是\nota{f_\mu}的前三项。
+    我们在实空间表象中
+    \footnote{我们用\nota{\backsimeq}表示张量与其在表象下的坐标的对应。}
+    将\neq{6.5_2.1}的分量坐标全部写出，即
+    \equa{
+        \mat{f_1\\f_2\\f_3\\f_4\\}
+        =
+        \mat{
+            0 & B_3 & -B_2 & -\i E_1/c \\
+            -B_3 & 0 & B_1 & -\i E_2/c \\
+            B_2 & -B_1 & 0 & -\i E_3/c \\
+            \i E_1/c & \i E_2/c & \i E_3/c & 0 \\
+        }
+        \mat{J_1\\J_2\\J_3\\\i c\rho\\}
+        =
+        \mat{
+            J_2 B_3 - J_3 B_2 + \rho E_1 \\
+            J_3 B_1 - J_1 B_3 + \rho E_2 \\
+            J_1 B_2 - J_2 B_1 + \rho E_3 \\
+            \i J_1E_1/c + \i J_2E_2/c + \i J_3E_3/c \\
+        }
+        \label{6.5_2.2}
+    }
+    于是可以看出
+    \equa{
+        \bm{f}=\rho\e+\j\times\b\backsimeq
+        \mat{
+            J_2 B_3 - J_3 B_2 \\
+            J_3 B_1 - J_1 B_3 \\
+            J_1 B_2 - J_2 B_1 \\
+        }
+        + \rho
+        \mat{E_1\\E_2\\E_3\\}
+        =
+        \mat{f_1\\f_2\\f_3\\}
+    }
+    这就证明了洛伦兹力密度（作用在单位体积带电物质的洛伦兹力）\nota{\bm{f}=\rho\e+\j\times\b}是狭义相对论协变矢量\nota{f_\mu}的前三个分量。
+    
+    由\neq{6.5_2.2}知，\nota{f_\mu}的第四个分量为
+    \equa{f_4=\frac{\i}{c}\j\cdot\e}

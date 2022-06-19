@@ -1,0 +1,113 @@
+\ProvidesPackage{suoxie}
+
+% 正体
+\def \d{\mathrm{d}}
+\def \i{\mathrm{i}}
+
+% 矢量
+\def \e{\bm{E}} % 大写家族
+\def \h{\bm{H}}
+\def \b{\bm{B}}
+\def \a{\bm{A}}
+\def \s{\bm{S}}
+\def \f{\bm{F}}
+\def \j{\bm{J}}
+\def \p{\bm{p}} % 小写家族
+\def \x{\bm{x}} 
+\def \r{\bm{r}}
+\def \v{\bm{v}}
+\def \k{\bm{k}}
+\def \m{\bm{m}}
+\def \z{\bm{z}}
+
+% 希腊
+\def \o{\omega}
+\def \al{\alpha}
+\def \be{\beta}
+\def \ga{\gamma}
+\def \la{\lambda}
+\def \pa{\partial}
+\def \ph{\varphi}
+\def \sig{\sigma}
+\def \bega{\be\ga}
+\def \eps{\varepsilon}
+\def \muz{\mu_0}
+
+% 相对论
+\def \lor{\Lambda^{\mu}{}_{\nu}}
+\def \lormat{\mat{\gamma & -\i\beta\gamma &  &   \\\i\beta\gamma & \gamma &   &   \\  &   & 1 &   \\  &   &   & 1 \\}}
+\def \ckx#1{\nota{\Sigma#1}}
+
+% 填字的
+\def \kuohao#1{\left(#1\right)}
+\def \fkuohao#1{\left[#1\right]}
+\def \hkuohao#1{\left\{#1\right\}}
+\def \det#1{\left|#1\right|}
+\newcommand{\while}[2]{\left. #1 \right|_{#2}}
+\newcommand{\dd}[2]{\frac{\d#1}{\d#2}}
+\newcommand{\pd}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\ppd}[2]{\frac{\partial^2#1}{\partial#2^2}}
+\renewcommand{\exp}[1]{\mathrm{e}^{#1}}
+\def \danwei#1{\bm{e}_{#1}}
+\newcommand{\neiji}[2]{\langle#1|#2\rangle}
+\newcommand{\qiwang}[1]{\langle#1\rangle}
+\def \mat#1{\begin{pmatrix}#1\end{pmatrix}}
+\def \diag#1{\mathrm{diag}\mat{#1\\}}
+\newcommand{\zhang}[3]{#1^{#2}{}_{#3}}
+
+% nabla家族
+\def \sandu{\nabla\cdot}
+\def \xuandu{\nabla\times}
+\def \tidu{\nabla}
+
+% 其他
+\def \neq#1{(\ref{#1})}  % !!!!
+\def \trans{^\mathrm{T}}
+\def \inv{^{-1}}
+\def \lhs{\mathrm{LHS.}}
+\def \rhs{\mathrm{RHS.}}
+\def \proj{\backsimeq}
+\def \sech{\mathrm{sech}}
+\def \tanh{\mathrm{tanh}}
+\def \re{\mathrm{Re}}
+\def \im{\mathrm{Im}}
+
+% 4.2特色
+% \input{JupyterSet.tex} %% 4.2才用！
+\def \epmua{\sqrt{\eps_1/\mu_1}} % 奇怪的4.2 hhhhhhh
+\def \epmub{\sqrt{\eps_2/\mu_2}}
+\def \bt{\bm{\beta}} % 希腊字母 % 只有4.2用到了这写定义，其实这样不好，但是我懒得改了
+\def \ap{\bm{\alpha}}
+
+% 4.3特色
+\def \O#1{\mathrm{O}\fkuohao{#1}}
+\def \xl{\frac{\eps\o}{\sigma}}
+\def \af{\bm{\alpha}_f}
+
+% 4.4
+\def \viervierban{{\frac{1}{2}}}
+\def \genh{^{\frac{1}{2}}}
+\def \viervierx{\fkuohao{\kuohao{\be r}\genh s}}
+
+% 3.1
+\def \ep{\varepsilon_{ijk}} %%%%%%%%%%%%%%%% 0.1也用了这个！
+\def \dreieinss{\sum_{i,j,k=1}^{3}}
+\def \bz{B_0}
+\def \pit{\frac{\pi}{2}}  %%%%%%%%%%%%% 2.1也用了
+
+% 1.1
+\newcommand     \dv{\mathrm d \bm V'}
+\newcommand     \ds{\mathrm d \bm S'}
+\newcommand     \nbl{\bm \nabla '}
+\newcommand     \sv{\int_{V}}
+\newcommand     \spv{\int_{\partial V}}
+\newcommand     \bmcd{\bm \cdot}
+
+% 1.2
+\def \huae{\mathscr{E}}
+\def \wf#1{\omega_{f#1}}
+
+% 1.3
+\def \eo{\varepsilon_0}
+\def \er{\varepsilon}
+\def \ss#1{$#1$}

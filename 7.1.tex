@@ -1,0 +1,59 @@
+\question{
+    实函数\nota{f(t)}的傅里叶变换和反傅里叶变换分别为
+    \equa{
+        f(t)=\int_{-\infty}^{\infty}{f_\omega e^{-i\omega t}\d\omega}
+        \qquad 
+        f_\omega=\frac{1}{2\pi}\int_{-\infty}^{\infty}{f(t)e^{i\omega t}\d t}
+    }
+    其中\nota{f_\o}为\nota{f(t)}的傅里叶分量。请证明：
+    \equa{
+        \int_{-\infty}^{\infty}{f^2(t)\d t=}4\pi\int_{0}^{\infty}{\left|f_\omega\right|^2\d\omega}
+    }
+}
+    
+    首先定义Hilbert空间的内积，在时域表象下写出内积的运算关系
+    \equa{\neiji{f}{g}=\frac{1}{2\pi}\int^\infty_{-\infty}f^*(t)g(t)\d t}
+    记
+    \footnote{\nota{\proj}表示Hilbert空间中的向量与其在选定表象下的坐标直接的映射关系。这个映射关系若用等号来表示显然是不合适的。}
+    \equa{\ket{f(t)}\proj f(t)}
+    \equa{\ket{\o}\proj \exp{-\i\o t}}
+    则\nota{f_\o}就是\nota{\ket{f(t)}}在\nota{\ket{\o}}上的投影，或者说是频域表象下的坐标分量
+    \equa{f_\o=\neiji{\o}{f(t)}}
+    可以证明，在我们的定义下\nota{\ket{\o}}构成一组正交归一、完备的基
+    \footnote{运算中对于哑指标，按照爱因斯坦求和约定缩并。比如\equa{\ket{\o}\bra{\o}=\int^\infty_{-\infty}\ket{\o}\bra{\o}\d\o}}
+    \equa{\neiji{\o'}{\o}=\frac{1}{2\pi}\int^\infty_{-\infty}\exp{\i\kuohao{\o'-\o}}\d t=\delta\kuohao{\o'-\o}}
+    \equa{\ket{\o}\bra{\o}=\bm{1}}
+    于是，在待证式子的左边插入这组完备基就可以得到其右边
+    \begin{multline}
+        \lhs
+        =\int_{-\infty}^{\infty}{f^2(t)\d t}
+        =2\pi\neiji{f(t)}{f(t)}
+        =2\pi\neiji{f(t)}{\o}\neiji{\o}{f(t)}\\
+        =2\pi f^*_\o f_\o
+        =4\pi\int_0^\infty\det{f_\o}^2\d\o
+        =\rhs
+    \end{multline}
+    原命题证毕。
+    
+\question{
+    已知轫致辐射的单位频率间隔辐射能量角分布为
+    \equa{
+        \dd{W_\o}{\Omega}=\frac{q^2}{16\pi^3\varepsilon_0c^3}|\Delta \v|^2{\sin}^2{\Theta}
+    }
+    其中\nota{\Theta}是辐射前后速度差\nota{\Delta\v}和观察辐射方向的夹角。请求单位频率间隔辐射能量。
+}
+
+    \equa{
+        \begin{aligned}
+            W_\o
+            &= \oint\dd{W_\o}{\Omega}\d\Omega \\
+            &= \frac{q^2}{16\pi^3\eps_0c^3}\det{\Delta\v}^2
+                \int_0^\pi\sin^2\Theta\cdot2\pi\sin\Theta\d\Theta\\
+            &= \frac{q^2}{16\pi^3\eps_0c^3}\det{\Delta\v}^22\pi
+                \int_{-1}^1\kuohao{1-\cos^2\Theta}\d\Theta\\
+            &= \frac{q^2}{16\pi^3\eps_0c^3}\det{\Delta\v}^22\pi
+                \kuohao{2-\frac{2}{3}}\\
+            &= \frac{q^2}{6\pi^2\eps_0c^3}\det{\Delta\v}^2\\
+        \end{aligned}
+    }
+    此即单位频率间隔辐射能量。

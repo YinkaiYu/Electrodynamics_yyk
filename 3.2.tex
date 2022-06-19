@@ -1,0 +1,66 @@
+\question{参考教材，}
+
+    \subquestion{推导稳定超导电流满足的方程\equa{\nabla^2\j_s=\frac{1}{\lambda_L^2}\j_s}其中\nota{\lambda_L}是伦敦穿透深度。}
+    
+        伦敦第二方程
+        \equa{\xuandu\j_s=-\alpha\b\label{3.2_1}}
+        对(\ref{3.2_1})取旋度并利用恒定条件
+        \equa{\sandu\j_s=0}
+        以及麦克斯韦方程组
+        \equa{\xuandu\b=\mu_0\j_s}
+        进行化简
+        \equa{\xuandu\kuohao{\xuandu\j_s}=-\alpha\kuohao{\xuandu\b}}
+        \equa{\nabla\kuohao{\sandu\j_s}-\nabla^2\j_s=-\alpha\mu_0\j_s}
+        \equa{\nabla^2\j_s=\frac{1}{\lambda_L^2}\j_s\label{3.2_2}}
+        其中
+        \equa{\lambda_L=\frac{1}{\sqrt{\mu_0\alpha}}}
+        
+    
+    \subquestion{若超导体充满在\nota{z<0}的空间，并已知在\nota{z=0}处有稳定超导电流密度为\nota{\j_s(0)}，方向沿\nota{x}方向，求超导体中的稳定超导电流密度。}
+    
+        由于系统具有x,y方向连续平移对称性
+        \equa{\pd{^2}{x^2}=\pd{^2}{y^2}=0}
+        则(\ref{3.2_2})转化为
+        \equa{\frac{\d^2}{\d z^2}\j_s(z)=\frac{1}{\lambda_L^2}\j_s(z)\qquad(z<0)}
+        其具有物理意义的解为
+        \equa{\j_s(z)=\j_s(0)\mathrm{e}^{-z/\lambda_L}}
+    
+\question{半径为\nota{a}、处于理想迈斯纳态的超导球附近，距球心为\nota{d(d>a)}处有一沿球径方向的磁偶极子\nota{\m}。证明：\nota{\m}的镜像为\nota{\m'=-\kuohao{a/d}^3\m}，位置在球内\nota{z={a^2}/{d}}处。}
+
+    只需验证磁场解满足边界条件
+    \equa{B_n=0\label{3.2_bianj}}
+    由于不存在自由电流，可以引入磁标势来描述磁场，磁偶极子的磁标势解为
+    \equa{\varphi_m^{(1)}=\frac{\m\cdot\bm{R}}{4\pi R^3}}
+    \equa{\b^{(1)}=\nabla\varphi_m^{(1)}}
+    其中
+    \equa{\bm{R}=\bm{x}-\bm{x'}}
+    
+    如果\nota{\m}的镜像为\nota{\m'=-\kuohao{a/d}^3\m}，位置在球内\nota{z={a^2}/{d}}处，则以磁偶极子所沿的球径方向取极轴，建立球坐标系，外部空间中的磁标势为
+    \equa{
+        \begin{aligned}
+            \varphi_m
+            &=
+            \frac{m(r\cos\theta-d)}{\fkuohao{r^2+d^2-2rd\cos\theta}^{\frac{3}{2}}}-
+            \frac{\kuohao{\frac{a}{d}}^3m\kuohao{r\cos\theta-\frac{a^2}{d}}}{\fkuohao{r^2+\kuohao{\frac{a^2}{d}}^2-2r\kuohao{\frac{a^2}{d}}\cos\theta}^{\frac{3}{2}}} \\
+            &=
+            \frac{m(r\cos\theta-d)}{\fkuohao{r^2+d^2-2rd\cos\theta}^{\frac{3}{2}}}-
+            \frac{m\kuohao{r\cos\theta-\kuohao{\frac{a}{d}}^2d}}{\fkuohao{a^2+\kuohao{\frac{r}{a}}^2d^2-2rd\cos\theta}^{\frac{3}{2}}}
+        \end{aligned}
+    }
+    则在边界上有
+    \equa{
+        \begin{aligned}
+            B_n
+            &=-\left.\pd{\varphi_m}{r}\right|_{r\to a}\\
+            &=
+            -\frac{m\cos\theta}{\fkuohao{a^2+d^2-2ad\cos\theta}^{\frac{3}{2}}}
+            +\frac{3}{2}m\kuohao{a\cos\theta-d}\frac{2a-2d\cos\theta}{\fkuohao{a^2+d^2-2ad\cos\theta}^{\frac{5}{2}}}\\
+            &\quad
+            +\frac{m\cos\theta}{\fkuohao{a^2+d^2-2ad\cos\theta}^{\frac{3}{2}}}
+            -\frac{3}{2}m\kuohao{a\cos\theta-\kuohao{\frac{a}{d}}^2d}\frac{2\kuohao{\frac{a}{d}}^2a-2d\cos\theta}{\fkuohao{a^2+d^2-2ad\cos\theta}^{\frac{5}{2}}}\\
+            &=3m\frac{\kuohao{a\cos\theta-d}\kuohao{a-d\cos\theta}-\kuohao{\frac{a}{d}}\kuohao{a-d\cos\theta}\kuohao{\frac{d}{a}}\kuohao{a\cos\theta-d}}{\fkuohao{a^2+d^2-2ad\cos\theta}^{\frac{5}{2}}}\\
+            &=0
+        \end{aligned}
+    }
+    满足边界条件(\ref{3.2_bianj})，由唯一性定理可知，该镜像即唯一解。
+    

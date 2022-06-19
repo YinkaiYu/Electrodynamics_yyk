@@ -1,0 +1,44 @@
+\question{验证一维非线性薛定谔方程的亮孤子解。}
+
+    一维非线性薛定谔方程
+    \equa{\i\pd{ U}{\xi}=\kuohao{-\viervierban\ppd{}{s}+\be-\be\det{ U}\genh} U\label{4.4_非线性薛定谔方程}}
+    要验证的孤子解
+    \equa{ U=r\genh\sech\fkuohao{\kuohao{\be r}\genh s}\exp{\i\be\kuohao{\frac{r}{2}-1\xi}}\label{4.4_孤子解}}
+    
+    将(\ref{4.4_孤子解})代入(\ref{4.4_非线性薛定谔方程})右边第一项
+    \equa{
+        \begin{aligned}
+            -\viervierban\ppd{}{s} U
+            &= -\viervierban\kuohao{\be r}\genh \pd{}{s}\hkuohao{-\tanh\viervierx U} \\
+            &= -\viervierban\be r\hkuohao{\tanh^2\viervierx U-\kuohao{1-\tanh^2\viervierx} U} \\
+            &= -\be r\hkuohao{\tanh^2\viervierx-\viervierban} U
+        \end{aligned}
+        \label{4.4_第一项}
+    }
+    将(\ref{4.4_孤子解})代入(\ref{4.4_非线性薛定谔方程})右边第三项
+    \equa{
+        \begin{aligned}
+            -\be\det{ U} U
+            &= -\be r\sech^2\viervierx U \\
+            &= -\be r\hkuohao{1-\tanh^2\viervierx} U
+        \end{aligned}
+        \label{4.4_第三项}
+    }
+    则由(\ref{4.4_第一项})(\ref{4.4_第三项})(\ref{4.4_孤子解})得(\ref{4.4_非线性薛定谔方程})右边为
+    \equa{
+        \begin{aligned}
+            \mathrm{RHS.}
+            &= -\viervierban\ppd{}{s} U-\be\det{ U}\genh U+\be U \\
+            &= -\be r\hkuohao{\tanh^2\viervierx-\viervierban} U -\be r\hkuohao{1-\tanh^2\viervierx} U +\be U \\
+            &= -\viervierban\be r+\be U 
+        \end{aligned}
+        \label{4.4_右边}
+    }
+    而将(\ref{4.4_孤子解})代入(\ref{4.4_非线性薛定谔方程})左边得
+    \equa{
+        \mathrm{LHS.}=-\be\kuohao{\frac{r}{2}-1} U =-\viervierban\be r+\be U
+        \label{4.4_左边}
+    }
+    由(\ref{4.4_右边})(\ref{4.4_左边})可见
+    \equa{\mathrm{RHS.}=\mathrm{LHS.}}
+    则证明了(\ref{4.4_孤子解})为(\ref{4.4_非线性薛定谔方程})的解。

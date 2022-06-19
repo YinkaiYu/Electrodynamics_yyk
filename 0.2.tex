@@ -1,0 +1,59 @@
+\question{
+    根据算符$\nabla$的微分性与矢量性，推导
+    \equa{
+        \boldsymbol{
+        \nabla({A}\cdot {B}) = 
+           {B}\times(\nabla\times {A}) + ({B}\cdot \nabla){A} 
+         + {A}\times(\nabla\times {B}) + ({A}\cdot \nabla){B}.
+        }
+        \label{0.2_q1}
+    }
+}
+    
+    我们在笛卡尔坐标中使用分量的形式\footnote{采用爱因斯坦求和约定。}来证明(\ref{0.2_q1})，即证明
+    \begin{equation}
+        \boldsymbol{
+        \left[\nabla({A}\cdot {B})\right]}_i \boldsymbol{= 
+         \left[{B}\times(\nabla\times {A}) + ({B}\cdot \nabla){A} 
+        + {A}\times(\nabla\times {B}) + ({A}\cdot \nabla){B}\right]}_i.
+        \label{0.2_q1_i}
+    \end{equation}
+    根据算符$\nabla$的微分性与矢量性，直接写出(\ref{0.2_q1_i})左右两边并作比较
+    \begin{equation}
+        \begin{aligned}
+            \mathrm{LHS.} 
+            & = \partial_i (A_j B_j) \\
+            & = B_j \partial_i A_j + A_j \partial_i B_j, \\
+        \end{aligned}
+    \end{equation}
+    \begin{equation}
+        \begin{aligned}
+            \mathrm{RHS.} 
+            & = \varepsilon_{ijk} B_j (\nabla\times \boldsymbol{A})_k + (B_j \partial_j)A_i + \varepsilon_{ijk} A_j (\nabla\times \boldsymbol{B})_k + (A_j \partial_j)B_i \\
+            & = \varepsilon_{ijk} B_j \varepsilon_{klm}\partial_l A_m + (B_j \partial_j)A_i + \varepsilon_{ijk} A_j \varepsilon_{klm}\partial_l B_m + (A_j \partial_j)B_i \\
+            & = (\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})B_j\partial_l A_m + B_j \partial_j A_i + (\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})A_j\partial_l B_m + A_j \partial_j B_i \\
+            & = (B_j \partial_i A_j - B_j \partial_j A_i) + B_j \partial_j A_i + (A_j \partial_i B_j - A_j \partial_j B_i) + A_j \partial_j B_i \\
+            & = B_j \partial_i A_j + A_j \partial_i B_j \\
+            & = \mathrm{LHS.} 
+        \end{aligned}
+    \end{equation}
+    可见(\ref{0.2_q1_i})左边等于右边，(\ref{0.2_q1_i})得证，则(\ref{0.2_q1})自然成立。证毕。
+    
+\question{
+    根据算符$\nabla$的微分性与矢量性，推导
+    \equa{
+        \boldsymbol{{A}\times(\nabla\times {A}) = }\frac{1}{2}\nabla A^2 \boldsymbol{- ({A}\cdot \nabla){A}.}
+        \label{0.2_q2}
+    }
+}
+    
+    可以直接使用(\ref{0.2_q1})来证明(\ref{0.2_q2})。在(\ref{0.2_q1})中令$\boldsymbol{B=A}$，得
+    \begin{equation}
+        \boldsymbol{\nabla({A}\cdot {A}) = }2\boldsymbol{{A}\times(\nabla\times {A}) + }2\boldsymbol{({A}\cdot \nabla){A}}
+        \label{0.2_q1_2}
+    \end{equation}
+    将(\ref{0.2_q1_2})两边乘以$\frac{1}{2}$，并移项即得
+    \begin{equation}
+        \boldsymbol{{A}\times(\nabla\times {A}) = }\frac{1}{2}\nabla A^2 \boldsymbol{- ({A}\cdot \nabla){A}.}
+    \end{equation}
+    此即(\ref{0.2_q2})，证毕。

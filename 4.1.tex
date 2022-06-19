@@ -1,0 +1,59 @@
+\question{考虑两列电场振幅振幅分别为\nota{E_1}和\nota{E_2}、偏振方向相同、初始相位同为零、频率分别为\nota{\omega+\d\omega}和\nota{\omega-\d\omega}的线偏振平面波，它们都沿\nota{z}轴转播。}
+
+    \subquestion{求合成电磁波，并把合成电磁波写成以\nota{\omega}为频率的振幅被调制（即振幅依赖于空间坐标和时间）的平面波；}
+    
+    先简单地考虑真空（无色散）情形。两列波叠加后的电场为
+    \equa{
+        \begin{aligned}
+            \e(z,t)
+            &=\bm{e}_0 E_1\mathrm{e}^{\i\fkuohao{\kuohao{k+\d k}z-\kuohao{\o+\d\o}t}}
+            +\bm{e}_0 E_2\mathrm{e}^{\i\fkuohao{\kuohao{k-\d k}z-\kuohao{\o-\d\o}t}}\\
+            &=\bm{e}_0\mathrm{e}^{\i\kuohao{kz-\o t}}
+            \fkuohao{ E_1\mathrm{e}^{\i\kuohao{z\d k-t\d\o}}+ E_2\mathrm{e}^{-\i\kuohao{z\d k-t\d\o}}}\\
+            &=\bm{e}_0\mathrm{e}^{\i\kuohao{kz-\o t}}
+            \fkuohao{\kuohao{ E_1+ E_2}\cos\kuohao{z\d k-t\d\o}+\kuohao{ E_1- E_2}\i\sin\kuohao{z\d k-t\d\o}}
+        \end{aligned}
+        \label{4.1_1}
+    }
+    其中记
+    \equa{k=\o/c\qquad\d k=\d\o/c\label{4.1_2}}
+    (\ref{4.1_1})中因子
+    \equa{\widetilde{E}_0(z\d k-t\d\o)=\kuohao{ E_1+ E_2}\cos\kuohao{z\d k-t\d\o}+\kuohao{ E_1- E_2}\i\sin\kuohao{z\d k-t\d\o}}即为调制振幅。
+    
+    \subquestion{求合成波的相位传播速度和振幅波传播速度。}
+    
+    观察相位因子\nota{\mathrm{e}^{\i\kuohao{kz-\o t}}}，显然其传播速度即相速度为
+    \equa{v_p=\frac{\o}{k}=c\label{4.1_3}}
+    而振幅波\nota{\widetilde{E}_0(z\d k-t\d\o)}的传播速度为
+    \equa{v_g=\frac{\d\o}{\d k}=c\label{4.1_4}}
+    
+    在一般的介质中，通常有色散，则(\ref{4.1_2})改写为
+    \equa{k=\o\sqrt{\mu(\o)\eps(\o)}}
+    以及线性近似
+    \equa{\d k = \kuohao{\sqrt{\mu(\o)\eps(\o)}+\o\pd{}{\o}\sqrt{\mu(\o)\eps(\o)}}\d\o}
+    于是结果(\ref{4.1_3})(\ref{4.1_4})改为
+    \equa{v_p=\frac{1}{\sqrt{\mu(\o)\eps(\o)}}}
+    \equa{v_g=\frac{1}{\kuohao{\sqrt{\mu(\o)\eps(\o)}+\o\pd{}{\o}\sqrt{\mu(\o)\eps(\o)}}}\approx\frac{1}{\sqrt{\mu(\o)\eps(\o)}}\kuohao{1-\frac{\o}{\sqrt{\mu(\o)\eps(\o)}}\pd{\sqrt{\mu(\o)\eps(\o)}}{\o}}}
+    
+\question{从真空麦克斯韦方程组推导磁场满足的波动方程，以及磁场时谐波所满足的亥姆霍兹方程。}
+
+    真空中的麦克斯韦方程组
+    \equa{\xuandu\e=-\pd{\b}{t}\label{4.1_mx1}}
+    \equa{\xuandu\b=\mu_0\eps_0\pd{\e}{t}\label{4.1_mx2}}
+    \equa{\sandu\e=0\label{4.1_mx3}}
+    \equa{\sandu\b=0\label{4.1_mx4}}
+    对(\ref{4.1_mx2})两边取旋度，并结合(\ref{4.1_mx4})(\ref{4.1_mx1})化简
+    \equa{\xuandu{\kuohao{\xuandu{\b}}}=\nabla\kuohao{\sandu\b}-\nabla^2\b=\mu_0\eps_0\pd{}{t}\kuohao{\xuandu\e}}
+    \equa{\nabla^2\b-\frac{1}{c^2}\pd{^2}{t^2}\b=0\label{4.1_bod}}
+    此即磁场满足的波动方程，其中
+    \equa{c=\frac{1}{\sqrt{\mu_0\eps_0}}}
+    
+    考虑单模时谐解
+    \equa{\b(x,t)=\b(x)\mathrm{e}^{-\i\o t}}
+    则对(\ref{4.1_bod})替换
+    \equa{\pd{}{t}\longrightarrow  -\i\o}
+    得
+    \equa{\nabla^2\b+k^2\b=0}
+    此即磁场的亥姆霍兹方程，其中
+    \equa{k=\frac{\o}{c}}
+
